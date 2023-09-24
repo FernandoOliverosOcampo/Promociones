@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/formulario.css" />
+    <title>Registre sus datos</title>
+  </head>
+  <body>
+    <section class="opciones-formulario">
+      <div class="contenedor-todo">
+        <div class="container-derecha">
+          <div class="contenido-derecha-titulo">
+            <h1>REGISTRO</h1>
+          </div>
+          <div class="contenido-derecha-texto">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque
+              eum esse modi. Velit assumenda laborum exercitationem tempora,
+              minima aperiam, voluptatem dolore itaque et sed earum eaque
+              doloremque placeat adipisci! Facilis!
+            </p>
+          </div>
+        </div>
+
+        <div class="container-formulario">
+          <div class="titulo-formulario">
+            <h2 class="titulo__formulario">Formulario registro</h2>
+          </div>
+          <div class="contenido-formulario">
+            <div class="formulario-contenido" id="formulario">
+              <label >Numero de documento: </label>
+              <input type="text" , placeholder="Numero de documento" id="numerocedula" />
+              <label >Tipo de documento: </label>
+              <select name="select" id="tipodocumento">
+                <option value="Cedula de ciudadania" selected>Cedula de ciudadania</option>
+                <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                <option value="Cedula extranjera">Cedula extranjera</option>
+                <option value="Permiso de permanencia">Permiso de permanencia</option>
+                <option value="Pasaporte">Pasaporte</option>
+              </select>
+              <label >Nombre: </label>
+              <input type="text" placeholder="Nombre" id="nombre"/>
+              <label >Segundo nombre: </label>
+              <input type="text" placeholder="Segundo Nombre" id="segundonombre" />
+              <label >Apellido: </label>
+              <input type="text" placeholder="Apellido" id="apellido"/>
+              <label >Segundo apellido: </label>
+              <input type="text" placeholder="Segundo apellido" id="segundoapellido"/>
+              <label >Correo electronico: </label>
+              <input type="email" name="email" id="correo" placeholder="Correo electronico"/>
+              <label >Telefono: </label>
+              <input type="text" placeholder="Telefono" id="telefono">
+              <label >Sexo: </label>
+              <select name="sexo" id="sexo">
+                <option value="Masculino" selected>Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Otro">Otro</option>
+              </select>
+              <label >Fecha de nacimiento: </label>
+              <input type="date" name="fecha" id="fecha" />
+              <label >Tipo de convenio: </label>
+              <select name="cliente" id="cliente">
+                <option value="persona" selected>Persona natural</option>
+                <option value="empresa">Convenio empresarial</option>
+              
+              </select>
+
+            </div>
+            <div class="botones-formulario">
+                <button type="submit" id="enviar">Enviar información</button>
+                <a href="login.html"><button type="submit">Volver</button></a>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/vista/vista-registro.js" type="module"></script>
+  </body>
+</html>

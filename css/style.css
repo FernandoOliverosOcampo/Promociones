@@ -1,0 +1,571 @@
+@import url(global.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: rgb(245, 243, 246);
+}
+
+
+.hero {
+    display: grid;
+    grid-template-areas:
+        "menu"
+        "principal-contenedor"
+        "footer";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+   
+   
+}
+
+/* CONTENIDO MENU */
+.menu {
+    grid-area: menu;
+    display: grid;
+    height: 10vh;
+    background-color: #026bd1;
+    width: auto;
+    
+}
+
+.menu-contenedor {
+    display: grid;
+    grid-template-areas:
+        "enlaces";
+    align-items: center;
+    
+} 
+
+.menu-lista {
+    grid-area: enlaces;
+    
+}
+
+.menu-contenedor .menu-lista {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 97vw;
+    font-weight: 50;
+    color: #ffff;
+}
+.menu-contenedor .menu-lista .menu__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+    margin: 0 20px 0 20px;
+}
+
+.menu-contenedor .menu-titulo .menu__titulo {
+    color: var(--blanco);
+}
+
+.menu-contenedor .menu-lista .menu__item {
+    color: var(--blanco);
+}
+
+.menu-contenedor .menu-lista .menu__item a {
+    font-size: 1.5vw;
+    color: var(--blanco);
+}
+
+.menu-contenedor .menu-lista .menu__item a:hover {
+    color: var(--pink);
+}
+
+.menu-contenedor .menu-lista .menu__item--active a {
+    font-weight: bold;
+    border-bottom: 1px solid var(--pink);
+    color: var(--pink);
+}
+
+.principal-contenido{
+    display: grid;
+    grid-template-areas: 
+    "slider"
+    "destacados"
+    "comercio"
+    "beneficios";
+    padding: 0.9vw ;
+    
+   
+   
+}
+.opciones-slider{
+    grid-area: slider;
+}
+.opciones-destacados{
+    padding: 1.5vw 0;
+    grid-area: destacados;
+}
+
+.opciones-comercio{
+    grid-area: comercio;
+    padding: 1.5vw 0;
+}
+
+.opciones-beneficios{
+    grid-area: beneficios;
+}
+
+  /* OPCIONES SLIDER */
+
+  .opciones-slider .contenedor-buscador input[type=text] {
+    width: 25vw;
+    padding: 0.9vw;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 1vw;
+    margin-top: 20px;
+}
+    /* CONTENEDOR BENEFICIOS */
+
+.contenedor-beneficios{
+        padding: 3vw 0;
+        display: inline-block;
+}
+
+
+    .contenido-beneficios{
+        display: flex;
+        padding: 1.2vw;
+        border: 1px solid transparent;
+        border-radius: 4vw;
+        column-gap: 2vw;
+        background-color: white;
+        align-items: center;
+        box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      
+    }
+
+    .contenedor-beneficios .contenido-beneficios .beneficios-texto{
+        font-size: 1.1vw;
+    }
+    .contenido-beneficios .beneficios-icono .fa-solid{
+        color: #026bd1;
+    }
+
+    /* CONTENIDO SLIDER */
+
+    .contenido-slider{
+        display: flex;
+        padding: 2vw 0;
+        column-gap: 2vw;
+        overflow:auto;
+        background-color: transparent;
+        width: 97vw;
+      
+    }
+
+    .item{
+        display: inline-block
+    }
+
+    .item-contenido{
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        column-gap: 2.5vw;
+        border-radius: 3vw;
+        padding: 1vw 2vw;
+        box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+     /* CONTENIDO DESCATACADOS */
+
+    .contenedor-destacados{
+        display: grid;
+        grid-template-areas: 
+        "textos"
+        "multimedia";
+       
+    }
+
+    .contenedor-destacados .textos{
+        grid-area: textos;
+        display: grid;
+        grid-template-areas: 
+        "titulo ver_mas";
+        justify-content: space-between;
+        width: 97vw;
+       
+        
+    }
+
+    .textos .destacados-titulo{
+        grid-area: titulo;
+    }
+
+    .textos .destacados-ver-mas{
+        grid-area: ver_mas
+    }
+    
+    .destacados-titulo p{
+        font-size: 1.7vw;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .destacados-ver-mas p{
+        font-size: 1.7vw;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .destacados-ver-mas{
+        grid-area: ver_destacados
+    }
+
+    .descatados-multimedia{
+        grid-area: multimedia;
+        display: flex;
+        column-gap: 2vw;
+        width: 97vw; 
+        overflow: auto;
+        margin-top: 20px;
+        background-color: transparent;
+    }
+
+    .descatados-multimedia img{
+        height: 40vh;
+        width: auto;
+        border-radius: 2vw;
+    }
+    /*CONTENIDO COMERCIO*/
+    .contenedor-comercio{
+        display: grid;
+        grid-template-areas: 
+        "textos"
+        "multimedia";
+
+    }
+    .contenedor-comercio .textos{
+        grid-area: textos;
+        display: grid;
+        grid-template-areas: 
+        "titulo comercio-ver-mas";
+        justify-content: space-between;
+        width: 97vw; 
+    }
+    .textos .titulo-comercio{
+        grid-area: titulo;
+    }
+    .textos .contenido-comercio{
+        grid-area: comercio-ver-mas;
+    }
+    .titulo-comercio p{
+        font-size: 1.7vw;
+        font-weight: bold;
+        letter-spacing: 1.6;
+        text-transform: uppercase;
+    }
+    .contenido-comercio p{
+        font-size: 1.7vw;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    .comercio-multimedia{
+        grid-area: multimedia;
+        display: flex;
+        column-gap: 2vw;
+        width: 97vw; 
+        overflow: auto;
+        background-color: transparent;
+        margin-top: 20px;
+
+    }
+    .comercio-contenido{
+        display: grid;
+        grid-template-areas: 
+        "imagenes"
+        "titulo";
+       
+    }
+    
+    .comercio-contenido .comercio-imagenes{
+        grid-area: imagenes;
+    }
+    .comercio-contenido .comercio-titulo{
+        grid-area: titulo;
+        text-align: center;
+        font-size: 1.2vw;
+    }
+    .comercio-imagenes img{
+        height: 15vh;
+        width: auto;
+        border-radius: 50%;
+    }
+    /*CONTENEDOR BENEFICIOS*/
+    .beneficios-contenedor{
+        display: grid;
+        grid-template-areas: 
+        "texto"
+        "boletos";
+    }
+    .beneficios-contenedor .texto{
+        grid-area: texto;
+    }
+    .beneficios-contenedor .contenido-tickets{
+        grid-area: boletos;
+    }
+
+@media only screen and (max-width: 600px) {
+
+    /* CONTENIDO MENU */
+    .menu {
+        height: 10vh;
+        background-color: #026bd1;
+        align-items: center;
+    }
+
+    .menu-contenedor {
+        display: grid;
+        grid-template-areas:
+            "titulo"
+            "enlaces";
+        align-items: center; 
+    }
+
+    .menu-contenedor .menu-lista {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100vw;
+        font-weight: 100;
+        color: #ffff;
+    }
+
+    .menu-contenedor .menu-titulo .menu__titulo {
+        font-size: 8vw;
+    }
+
+    .menu-contenedor .menu-lista .menu__item a {
+        font-size: 5vw;
+    }
+    .menu-contenedor .menu-lista .menu__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+        margin: 0 20px 0 20px;
+    }
+
+    .principal-contenido{
+        display: grid;
+        grid-template-areas: 
+        "slider"
+        "destacados"
+        "comercio"
+        "beneficios";
+        padding: 2vw;
+    }
+
+    .opciones-slider{
+        grid-area: slider;
+    }
+
+    .opciones-destacados{
+        padding: 5vw 0;
+        grid-area: destacados;
+    }
+
+    .opciones-comercio{
+        grid-area: comercio;
+        padding: 5vw 0;
+    }
+
+    .opciones-beneficios{
+        grid-area: beneficios;
+    }
+
+    /* OPCIONES SLIDER */
+
+    .opciones-slider .contenedor-buscador input[type=text] {
+        width: 90%;
+        padding: 3vw;
+        border: 1px solid transparent;
+        background-color: white;
+        border-radius: 1vw;
+    }
+
+    /* CONTENEDOR BENEFICIOS */
+
+    .contenedor-beneficios{
+        padding: 5vw 0;
+        display: inline-block;
+    }
+
+
+    .contenido-beneficios{
+        display: flex;
+        padding: 3vw;
+        border: 1px solid transparent;
+        border-radius: 4vw;
+        column-gap: 2vw;
+        background-color: white;
+        align-items: center;
+    }
+
+    .contenedor-beneficios .contenido-beneficios .beneficios-texto{
+        font-size: 3vw;
+    }
+
+    /* CONTENIDO SLIDER */
+
+    .contenido-slider{
+        display: flex;
+        padding: 5vw 0;
+        column-gap: 4vw;
+        width: 98vw;
+        overflow-x:auto;
+    }
+
+    .item{
+        display: inline-block
+    }
+
+    .item-contenido{
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        column-gap: 2.5vw;
+        border-radius: 3vw;
+        padding: 2vw 3vw;
+        box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    /* CONTENIDO DESCATACADOS */
+
+    .contenedor-destacados{
+        display: grid;
+        grid-template-areas: 
+        "textos"
+        "multimedia";
+    }
+
+    .contenedor-destacados .textos{
+        grid-area: textos;
+        display: grid;
+        grid-template-areas: 
+        "titulo ver_mas";
+        justify-content: space-between;
+    }
+
+    .textos .destacados-titulo{
+        grid-area: titulo;
+    }
+
+    .textos .destacados-ver-mas{
+        grid-area: ver_mas
+    }
+    
+    .destacados-titulo p{
+        font-size: 4vw;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .destacados-ver-mas p{
+        font-size: 4vw;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .destacados-ver-mas{
+        grid-area: ver_destacados
+    }
+
+    .descatados-multimedia{
+        grid-area: multimedia;
+        display: flex;
+        column-gap: 5vw;
+        width: 95vw;
+        overflow: auto;
+    }
+
+    .descatados-multimedia img{
+        height: 23vh;
+        width: auto;
+        border-radius: 4vw;
+    }
+    /*CONTENIDO COMERCIO*/
+    .contenedor-comercio{
+        display: grid;
+        grid-template-areas: 
+        "textos"
+        "multimedia";
+
+    }
+    .contenedor-comercio .textos{
+        grid-area: textos;
+        display: grid;
+        grid-template-areas: 
+        "titulo comercio-ver-mas";
+        justify-content: space-between;
+    }
+    .textos .titulo-comercio{
+        grid-area: titulo;
+    }
+    .textos .contenido-comercio{
+        grid-area: comercio-ver-mas;
+    }
+    .titulo-comercio p{
+        font-size: 4vw;
+        font-weight: bold;
+        letter-spacing: 1.6;
+        text-transform: uppercase;
+    }
+    .contenido-comercio p{
+        font-size: 5vw;
+        text-transform: uppercase;
+    }
+    .comercio-multimedia{
+        grid-area: multimedia;
+        display: flex;
+        column-gap: 5vw;
+        width: 95vw;
+        overflow: auto;
+        margin: 20px 0 20px 0;
+
+    }
+    .comercio-contenido{
+        display: grid;
+        grid-template-areas: 
+        "imagenes"
+        "titulo";
+    }
+    
+    .comercio-contenido .comercio-imagenes{
+        grid-area: imagenes;
+    }
+    .comercio-contenido .comercio-titulo{
+        grid-area: titulo;
+        text-align: center;
+        font-size: 4.5vw;
+    }
+    .comercio-imagenes img{
+        height: 10vh;
+        width: 20vw;
+        border-radius: 50%;
+    }
+    /*CONTENEDOR BENEFICIOS*/
+    .beneficios-contenedor{
+        display: grid;
+        grid-template-areas: 
+        "texto"
+        "boletos";
+    }
+    .beneficios-contenedor .texto{
+        grid-area: texto;
+    }
+    .beneficios-contenedor .contenido-tickets{
+        grid-area: boletos;
+    }
+    
+}   
