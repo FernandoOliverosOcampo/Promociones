@@ -80,7 +80,7 @@ button:hover{
     justify-content: center;
     align-items: center;
     height: 83vh;
-    overflow-y: auto;
+    overflow: auto;
     
 }
 .formulario-contenido{
@@ -125,4 +125,70 @@ button:hover{
 }
 .contenido-formulario select:focus{
     outline: none;
+}
+@media only screen and (max-width: 600px) {
+    
+    button{
+    height: 5vh;
+    width: 35vw;
+    font-size: 4vw;
+    
+    }
+    
+    .contenedor-todo{
+        display: grid;
+        grid-template-areas: 
+        "informacion" 
+        "formulario";
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        height: 100vh;
+        background-color: transparent;
+      
+    }
+    .container-derecha{
+        justify-content: center;
+        
+    }
+    .contenido-derecha-titulo h1{
+        font-size: 5vw;
+        text-align: center;
+    }
+    .contenido-derecha-texto{
+        width: 90vw;
+        
+    }
+    .contenido-derecha-texto p{
+        text-align: left;
+       
+    }
+    .container-formulario{
+        width: 90vw;
+
+    }
+    .contenido-formulario{
+        justify-content: center;
+    }
+    .titulo__formulario{
+        font-size: 5vw;
+        text-align: center;
+    }
+    .contenido-formulario label{
+        text-align: left;
+        font-size: 5vw;
+    }
+    .contenido-formulario input{
+       width: 80vw;
+        font-size: 5vw;
+    }
+    .contenido-formulario input:focus{
+        outline: none;
+    }
+    .contenido-formulario select{
+
+        width: 80vw;
+        font-size: 5vw;
+    }
+   
+    
 }

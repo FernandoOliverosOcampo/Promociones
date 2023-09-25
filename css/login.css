@@ -90,7 +90,54 @@
     cursor: pointer;
     margin: 20px;
 }
+
 .login-botones button:hover{
     color: black;
     background: white;
+}
+.login-botones a{
+    font-weight: bold;
+    color: black;
+}
+.login-botones a:hover{
+    color: blue;
+}
+@media only screen and (max-width: 600px) {
+    .container-login{
+        display: grid;
+        grid-template-areas: 
+        "login"
+        "informacion";
+        width: 100vw;
+        height: 100vh;
+    }
+    .contenido-titulo-izquierda{
+        text-align: center;
+    }
+    .contenido-izquierda-texto{
+        width: 90vw;
+    }
+    .contenido-login{
+        height: 50vh;
+        width: 90vw;
+    }
+    .login-titulo{
+        font-size: 5vw;
+    }
+    .login-contenido label{
+        width: 80vw;
+    }
+    .login-contenido input{
+        height: 5vh;
+        width: 80vw;
+        font-size: 4vw;
+        
+    }
+  
+    .login-botones button{
+        height: 4.5vh;
+        width: 35vw;
+        font-size: 5vw;
+     
+    }
 }
