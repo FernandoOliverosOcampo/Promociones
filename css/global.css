@@ -97,6 +97,60 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+/*MODAL 2*/
+/* Modal */
+.modal2 {
+    display: none;
+    /* POr defecto no se muestran en pantalla hasta que se abran */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal2 .modal-contenido2 {
+    display: grid;
+    height: 90vh;
+    width: 90vw;
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 1vw;
+    border-radius: 0.4vw;
+    grid-template-areas:
+        "cabecera"
+        "cuerpo"
+        "pie";
+    grid-template-rows: 5vh auto 5vh;
+}
+
+.modal2 .modal-cabecera2 {
+    grid-area: cabecera;
+    display: grid;
+    grid-template-areas: 
+    "nombre cerrar";
+    justify-content: space-between;
+}
+.modal2 .modal-cabecera2 .nombre{
+    grid-area: nombre;
+    padding: 1vw 0;
+    color: gray;
+}
+.modal2 .modal-cabecera2 .cerrar{
+    grid-area: cerrar;
+    padding: 0 1vw;
+}
+
+.modal2 .modal-cuerpo2 {
+    grid-area: cuerpo;
+    overflow: auto;
+    flex-wrap: wrap;
+}
+
 @media only screen and (max-width: 600px) {
     .modal .modal-contenido {
         height: 90vh;
