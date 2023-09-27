@@ -1,4 +1,265 @@
 const Vista = {
+  itemServicios: function (){
+    const slider = document.getElementById("slider");
+    const sliderContent = slider.querySelector(".contenido-slider");
+
+    sliderContent.innerHTML = `
+    <div class = "item">
+      <div class = "item-contenido">
+            <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+      </div>
+    </div>
+    <div class = "item">
+    <div class = "item-contenido">
+          <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+    </div>
+    </div>
+    <div class = "item">
+    <div class = "item-contenido">
+          <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+    </div>
+  </div>
+  <div class = "item">
+  <div class = "item-contenido">
+        <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+  </div>
+</div>
+<div class = "item">
+<div class = "item-contenido">
+      <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+</div>
+</div>
+<div class = "item">
+<div class = "item-contenido">
+      <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+</div>
+</div>
+<div class = "item">
+<div class = "item-contenido">
+      <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+</div>
+</div>
+<div class = "item">
+<div class = "item-contenido">
+      <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+</div>
+</div>
+    `
+    return sliderContent
+  },
+  destacados: function (){
+    const multimedia = document.getElementById('multimedia');
+    const multimediaContent = multimedia.querySelector('.descatados-multimedia')
+    multimediaContent.innerHTML = `
+    <a href="#"><img src="./img/2.jpg" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/3.jpg" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/6.jpg" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/7.jpg" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/6.jpg" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/3.jpg" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/2.jpg" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/7.jpg" alt="imagen multimedia" ></a>
+    `
+    return multimediaContent;
+  },
+  comercios: function(){
+    const comercio = document.getElementById('comercios-multimedia');
+    const comercioContent = comercio.querySelector('.contenedor-comercio-multimedia');
+
+    comercioContent.innerHTML = `
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/3.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/6.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/2.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/7.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/2.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/3.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/6.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/7.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/2.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/2.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/2.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+    <div class="comercio-contenido" id="contenido-comercio">
+    <div class="comercio-imagenes">
+        <a href=""><img src="./img/2.jpg" alt=""></a>
+    </div>
+    <div class="comercio-titulo">
+        <p>Redbull</p>
+    </div>
+    </div>
+    </div>
+
+    `
+    return comercioContent
+  },
+  tickets: function(){
+    const ticket = document.getElementById('tickets');
+    const ticketsContent = ticket.querySelector('.contenedor-boletos')
+
+    ticketsContent.innerHTML = `
+    <div class="contenido-tickets">
+        <div class="imagen-tickets">
+              <img src="./img/2.jpg" alt="">
+        </div>
+        <div class="tickets-contenido">
+            <div class="texto-ticket">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
+
+                <button><a href="#">20%</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="contenido-tickets">
+    <div class="imagen-tickets">
+          <img src="./img/2.jpg" alt="">
+    </div>
+    <div class="tickets-contenido">
+        <div class="texto-ticket">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
+
+            <button><a href="#">20%</a></button>
+        </div>
+    </div>
+</div>
+<div class="contenido-tickets">
+<div class="imagen-tickets">
+      <img src="./img/2.jpg" alt="">
+</div>
+<div class="tickets-contenido">
+    <div class="texto-ticket">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
+
+        <button><a href="#">20%</a></button>
+    </div>
+</div>
+</div>
+<div class="contenido-tickets">
+<div class="imagen-tickets">
+      <img src="./img/2.jpg" alt="">
+</div>
+<div class="tickets-contenido">
+    <div class="texto-ticket">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
+
+        <button><a href="#">20%</a></button>
+    </div>
+</div>
+</div>
+<div class="contenido-tickets">
+<div class="imagen-tickets">
+      <img src="./img/2.jpg" alt="">
+</div>
+<div class="tickets-contenido">
+    <div class="texto-ticket">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
+
+        <button><a href="#">20%</a></button>
+    </div>
+</div>
+</div>
+<div class="contenido-tickets">
+<div class="imagen-tickets">
+      <img src="./img/2.jpg" alt="">
+</div>
+<div class="tickets-contenido">
+    <div class="texto-ticket">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
+
+        <button><a href="#">20%</a></button>
+    </div>
+</div>
+</div>
+    
+    `
+    return ticketsContent;
+  },
   llenarModal: function () {
     const modal = document.getElementById("modal");
     const modalContent = modal.querySelector(".modal-contenido");
@@ -138,6 +399,10 @@ const Vista = {
   },
 };
 document.addEventListener("DOMContentLoaded", function () {
+  Vista.itemServicios();
+  Vista.destacados();
+  Vista.comercios();
+  Vista.tickets();
   Vista.llenarModal();
   Vista.mostrarModal();
   Vista.llenarModal2();

@@ -157,23 +157,25 @@ a{
 }
 
 
-    .contenido-beneficios{
+    .contenido-beneficios button{
         display: flex;
         padding: 1.2vw;
         border: 1px solid transparent;
         border-radius: 4vw;
-        column-gap: 2vw;
+        column-gap: 1.5vw;
+        height: 8vh;
+        width: 17vw;
         background-color: white;
         align-items: center;
         box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-      
-    }
-
-    .contenedor-beneficios .contenido-beneficios .beneficios-texto{
         font-size: 1.1vw;
+        font-weight: bold;
     }
-    .contenido-beneficios .beneficios-icono .fa-solid{
+    .contenido-beneficios button .fa-solid{
         color: #026bd1;
+    }
+    .contenido-beneficios button:hover{
+        background-color: rgb(226, 226, 226);
     }
 
     /* CONTENIDO SLIDER */
@@ -192,13 +194,22 @@ a{
         display: inline-block
     }
 
-    .item-contenido{
-        background-color: rgb(255, 255, 255);
+    .item-contenido button{
         display: flex;
-        column-gap: 2.5vw;
-        border-radius: 3vw;
-        padding: 1vw 2vw;
+        padding: 1.2vw;
+        border: 1px solid transparent;
+        border-radius: 4vw;
+        column-gap: 1.5vw;
+        height: 8vh;
+        width: 10vw;
+        background-color: white;
+        align-items: center;
         box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        font-size: 1.1vw;
+        font-weight: bold;
+    }
+    .item-contenido button:hover{
+        background-color: rgb(226, 226, 226);
     }
      /* CONTENIDO DESCATACADOS */
 
@@ -217,8 +228,6 @@ a{
         "titulo ver_mas";
         justify-content: space-between;
         width: 97vw;
-       
-        
     }
 
     .textos .destacados-titulo{
@@ -293,7 +302,7 @@ a{
         text-transform: uppercase;
         font-weight: bold;
     }
-    .comercio-multimedia{
+    .contenedor-comercio-multimedia{
         grid-area: multimedia;
         display: flex;
         column-gap: 2vw;
@@ -343,7 +352,7 @@ a{
         text-transform: uppercase;
         font-size: 1.7vw;
     }
-    .tickets-contenedor{
+    .contenedor-boletos{
         display: flex;
         flex-wrap: wrap;
         column-gap: 2vw;
@@ -517,14 +526,17 @@ a{
         padding: 2vw ;
         display: inline-block;
     }
-    .contenido-beneficios{
+    .contenido-beneficios button{
         display: flex;
         padding: 3vw;
         border: 1px solid transparent;
         border-radius: 4vw;
         column-gap: 2vw;
+        width: 43vw;
+        height: 5vh;
         background-color: white;
         align-items: center;
+        font-size: 3vw;
     }
 
     .contenedor-beneficios .contenido-beneficios .beneficios-texto{
@@ -545,13 +557,16 @@ a{
         display: inline-block
     }
 
-    .item-contenido{
+    .item-contenido button{
         background-color: rgb(255, 255, 255);
         display: flex;
         column-gap: 2.5vw;
         border-radius: 3vw;
         padding: 2vw 3vw;
+        height: 4vh;
+        width: 25vw;
         box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+        font-size: 3vw;
     }
 
     /* CONTENIDO DESCATACADOS */
