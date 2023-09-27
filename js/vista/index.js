@@ -185,7 +185,7 @@ const Vista = {
     ticketsContent.innerHTML = `
     <div class="contenido-tickets">
         <div class="imagen-tickets">
-              <img src="./img/2.jpg" alt="">
+              <img src="./img/2.jpg" alt="logo comercio">
         </div>
         <div class="tickets-contenido">
             <div class="texto-ticket">
@@ -197,7 +197,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="./img/2.jpg" alt="">
+          <img src="./img/2.jpg" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">
@@ -209,7 +209,7 @@ const Vista = {
 </div>
 <div class="contenido-tickets">
 <div class="imagen-tickets">
-      <img src="./img/2.jpg" alt="">
+      <img src="./img/2.jpg" alt="logo comercio">
 </div>
 <div class="tickets-contenido">
     <div class="texto-ticket">
@@ -221,7 +221,7 @@ const Vista = {
 </div>
 <div class="contenido-tickets">
 <div class="imagen-tickets">
-      <img src="./img/2.jpg" alt="">
+      <img src="./img/2.jpg" alt="logo comercio">
 </div>
 <div class="tickets-contenido">
     <div class="texto-ticket">
@@ -233,7 +233,7 @@ const Vista = {
 </div>
 <div class="contenido-tickets">
 <div class="imagen-tickets">
-      <img src="./img/2.jpg" alt="">
+      <img src="./img/2.jpg" alt="logo comercio">
 </div>
 <div class="tickets-contenido">
     <div class="texto-ticket">
@@ -245,7 +245,7 @@ const Vista = {
 </div>
 <div class="contenido-tickets">
 <div class="imagen-tickets">
-      <img src="./img/2.jpg" alt="">
+      <img src="./img/2.jpg" alt="logo comercio">
 </div>
 <div class="tickets-contenido">
     <div class="texto-ticket">
@@ -279,16 +279,16 @@ const Vista = {
                 <h2>Destacados</h2>
             </div>
             <div class="destacados-modal">
-            <a href="#"><img src="./img/3.jpg" alt="" ></a>
-            <a href="#"><img src="./img/2.jpg" alt=""></a>
-            <a href="#"><img src="./img/3.jpg" alt=""></a>
-            <a href="#"><img src="./img/6.jpg" alt=""></a>
-            <a href="#"><img src="./img/7.jpg" alt=""></a>
-            <a href="#"><img src="./img/2.jpg" alt=""></a>
-            <a href="#"><img src="./img/7.jpg" alt=""></a>
-            <a href="#"><img src="./img/2.jpg" alt=""></a>
-            <a href="#"><img src="./img/3.jpg" alt=""></a>
-            <a href="#"><img src="./img/6.jpg" alt=""></a>
+            <a href="#"><img src="./img/3.jpg" alt="logo comercio" ></a>
+            <a href="#"><img src="./img/2.jpg" alt="logo comercio"></a>
+            <a href="#"><img src="./img/3.jpg" alt="logo comercio"></a>
+            <a href="#"><img src="./img/6.jpg" alt="logo comercio"></a>
+            <a href="#"><img src="./img/7.jpg" alt="logo comercio"></a>
+            <a href="#"><img src="./img/2.jpg" alt="logo comercio"></a>
+            <a href="#"><img src="./img/7.jpg" alt="logo comercio"></a>
+            <a href="#"><img src="./img/2.jpg" alt="logo comercio"></a>
+            <a href="#"><img src="./img/3.jpg" alt="logo comercio"></a>
+            <a href="#"><img src="./img/6.jpg" alt="logo comercio"></a>
         </div>
             </div>
                 
@@ -321,7 +321,7 @@ const Vista = {
             <div class="comercios-tarjetas-contenedor">
                    <div class="contenido-comercios-tarjetas">
                         <div class="imagen-tarjetas">
-                            <img src="./img/2.jpg" alt="">
+                            <img src="./img/2.jpg" alt="logo comercio">
                         </div>
                         <div class="tarjetas-contenido">
                             <div class="texto-tarjeta">
