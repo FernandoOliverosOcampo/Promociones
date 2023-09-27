@@ -69,7 +69,7 @@ const Vista = {
     comercioContent.innerHTML = `
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/3.jpg" alt=""></a>
+        <a href=""><img src="./img/3.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -78,7 +78,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/6.jpg" alt=""></a>
+        <a href=""><img src="./img/6.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -87,7 +87,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt=""></a>
+        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -96,7 +96,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/7.jpg" alt=""></a>
+        <a href=""><img src="./img/7.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -105,7 +105,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt=""></a>
+        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -114,7 +114,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/3.jpg" alt=""></a>
+        <a href=""><img src="./img/3.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -123,7 +123,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/6.jpg" alt=""></a>
+        <a href=""><img src="./img/6.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -132,7 +132,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/7.jpg" alt=""></a>
+        <a href=""><img src="./img/7.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -141,7 +141,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt=""></a>
+        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -150,7 +150,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt=""></a>
+        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -159,7 +159,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt=""></a>
+        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -168,14 +168,13 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt=""></a>
+        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
     </div>
     </div>
     </div>
-
     `
     return comercioContent
   },

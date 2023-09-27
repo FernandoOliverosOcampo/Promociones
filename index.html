@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Redime tus beneficios de los diferentes aliados acá, ingresa a tu cuenta y disfruta de tus beneficios.">
     <link rel="stylesheet" href="./css/style.css">
     <title>Promociones Equiti</title>
 </head>
 <body>
-
     <div class = "hero">
-
+        <!-- MENU -->
         <header class="menu">
             <nav class="menu-contenedor">
-                <div class="menu-titulo">
-    
-                </div>
                 <ul class="menu-lista" id="menuLista">
                     <li class="menu__item menu__item--active"><i class="fa-solid fa-crown"></i>
                     <a href="#"> Básico</a></li>
@@ -23,37 +20,32 @@
                 </ul>
             </nav>
         </header>
-
+        <!-- CONTENEDOR PRINCIPAL -->
         <div class = "principal-contenedor">
             <div class ="principal-contenido">
-        
-                <section class="opciones-slider">
-                    
+                <!-- sección slider -->
+                <section class="opciones-slider">      
                     <div class="contenedor-buscador">
                         <input type="text" placeholder= "Buscar..." />
                     </div>
-
                     <div class="contenedor-beneficios">
                         <div class="contenido-beneficios">
                                 <button id="beneficios-cerca"><i class="fa-solid fa-arrows-to-dot"></i>   Beneficios cerca de mi</button>
                         </div>
                     </div>
-
                     <div class="contenedor-slider" id="slider">    
                         <div class = "contenido-slider" id="slider-contenido">
                             <!-- Aqui van los servicios del slider -->
                         </div>
-                    </div>
-                
+                    </div>            
                 </section>
-            
+                <!-- sección destacados -->
                 <section class="opciones-destacados">
                     <div class="contenedor-destacados">
                         <div class = "textos">
                             <div class = "destacados-titulo">
                                 <p>Destacado</p>
                             </div>
-    
                             <div class = "destacados-ver-mas">
                                 <a href="#" id="ver-mas" >Ver destacados</a>
                             </div>
@@ -69,10 +61,8 @@
                                 <!-- Aquí puedes agregar el contenido específico del modal -->
                         </div>
                     </div>
-            
                 </section>
-            
-              
+                <!-- sección destacados -->
                 <section class="opciones-comercio">
                     <div class="contenedor-comercio">
                         <div class="textos">
@@ -96,7 +86,7 @@
                     </div>
             
                 </section>
-
+                <!-- sección beneficios -->
                 <section class="opciones-beneficios">
                     <div class="beneficios-contenedor">
                         <div class="texto">
@@ -106,7 +96,7 @@
                         </div>
                         <div class="tickets-contenedor" id="tickets">
                             <div class="contenedor-boletos">
-
+                                <!-- aqui van los boletos -->
                             </div>
                         </div>
                     </div>
@@ -115,7 +105,6 @@
         </div>
     </div>
 </body>
-
 <script src="https://kit.fontawesome.com/9092cd4d7f.js" crossorigin="anonymous"></script>
 <script src="./js/vista/index.js"></script>
 </html>
