@@ -58,36 +58,24 @@ const Vista = {
                 <h2>Comercios</h2>
             </div>
             <div class="comercios-modal">
-            <div class="tickets-contenedor">
-                            <div class="contenido-tickets">
-                                <div class="imagen-tickets">
-                                    <img src="./img/2.jpg" alt="">
-                                </div>
-                                <div class="tickets-contenido">
-                                    <div class="texto-ticket">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
+            <div class="comercios-tarjetas-contenedor">
+                   <div class="contenido-comercios-tarjetas">
+                        <div class="imagen-tarjetas">
+                            <img src="./img/2.jpg" alt="">
+                        </div>
+                        <div class="tarjetas-contenido">
+                            <div class="texto-tarjeta">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                Sit sequi unde beatae animi nostrum atque.</p>
 
-                                        <button><a href="#">20%</a></button>
-                                    </div>
-                                </div>
-    
+                                <button><a href="#">20%</a></button>
                             </div>
-                            <div class="tickets-contenedor">
-                            <div class="contenido-tickets">
-                                <div class="imagen-tickets">
-                                    <img src="./img/2.jpg" alt="">
-                                </div>
-                                <div class="tickets-contenido">
-                                    <div class="texto-ticket">
-                                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-
-                                        <button><a href="#">20%</a></button>
-                                    </div>
-                                </div>
-    
-                            </div>
+                        </div>
+  
+                    </div>
+                            
        
-        </div>
+            </div>
             </div>
                 
             <div class="modal-pie2">
@@ -149,11 +137,9 @@ const Vista = {
     });
   },
 };
-document.addEventListener('DOMContentLoaded', function () {
-    Vista.llenarModal()
-    Vista.mostrarModal()
-    Vista.llenarModal2()
-    Vista.mostrarModal2()
-   
-  })
-  
+document.addEventListener("DOMContentLoaded", function () {
+  Vista.llenarModal();
+  Vista.mostrarModal();
+  Vista.llenarModal2();
+  Vista.mostrarModal2();
+});

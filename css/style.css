@@ -27,7 +27,7 @@ button:hover{
 }
 a{
     color: black;
-    font-size: 1.7vw;
+    font-size: 1.5vw;
     text-transform: uppercase;
 }
 
@@ -387,6 +387,36 @@ a{
         color: white;
         font-size: 1.5vw;
     }
+    /*TARJETAS */
+    .contenido-comercios-tarjetas{
+        display: grid;
+        grid-template-areas: 
+        "imagen contenido";
+        background:  white;
+        box-shadow:  3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+        height: 17vh;
+        border-radius: 1vw;
+        width: 35vw;
+        column-gap: 2vw;
+        padding: 2vw;
+    }
+    .imagen-tarjetas{
+        grid-area: imagen;
+    }
+   .imagen-tarjetas img{
+        height: 15vh;
+        width: 7vw;
+        border-radius: 50%;
+    }
+   .texto-tarjeta{
+        grid-area: contenido;
+    }
+   .texto-tarjeta{
+        display: flex;
+        flex-direction: column;
+        width: 27vw;
+        text-align: justify;
+   }
   
 @media only screen and (max-width: 600px) {
     button{
