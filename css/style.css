@@ -709,6 +709,21 @@ a{
     .tickets-contenido .texto-ticket a{
         font-size: 4vw;
     }
+    /*TARJETAS */
+    .contenido-comercios-tarjetas{
+        height: 17vh;
+        width: 85vw;
+    }
+   .imagen-tarjetas img{
+    height: 10vh;
+    width: 20vw;
+    border-radius: 50%;
+    padding: 10vw 0;
+    }
+
+   .texto-tarjeta{
+        width: 60vw;     
+   }
     
    
 }   
