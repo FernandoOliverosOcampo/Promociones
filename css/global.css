@@ -154,6 +154,69 @@
     overflow: auto;
     flex-wrap: wrap;
 }
+/*MODAL INICIO SESION*/
+.modal-inicio {
+    display: none;
+    /* POr defecto no se muestran en pantalla hasta que se abran */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-inicio .modal-contenido-inicio {
+    display: grid;
+    height: 50vh;
+    width: 30vw;
+    background-color: #fefefe;
+    margin: 2% auto;
+    padding: 1vw;
+    border-radius: 0.4vw;
+    grid-template-areas:
+        "cabecera"
+        "cuerpo"
+        "pie";
+    grid-template-rows: 5vh auto 5vh;
+}
+
+.modal-inicio .modal-cabecera {
+    grid-area: cabecera;
+    display: grid;
+    grid-template-areas: 
+    "nombre cerrar";
+    justify-content: space-between;
+}
+.modal-inicio .modal-cabecera .nombre{
+    grid-area: nombre;
+    padding: 1vw 0;
+    color: gray;
+}
+.modal-inicio .modal-cabecera .cerrar{
+    grid-area: cerrar;
+    padding: 0 1vw;
+}
+
+.modal-inicio .modal-cuerpo {
+    grid-area: cuerpo;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.modal-inicio .modal-cuerpo .titulo-inicio h2{
+    text-align: center;
+}
+.modal-inicio .modal-cuerpo .titulo-inicio p{
+    text-align: justify;
+    width: 30vw;
+}
+
 
 @media only screen and (max-width: 600px) {
     .modal .modal-contenido {
@@ -176,5 +239,14 @@
         width: 80vw;
         border-radius: 10px;
     }
+    /*MODAL INICIO SESION*/
+
+.modal-inicio .modal-contenido-inicio {
+    width: 90vw;
+}
+.modal-inicio .modal-cuerpo .titulo-inicio p{
+    width: 80vw;
+}
+
   
 }

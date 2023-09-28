@@ -386,6 +386,18 @@ a{
         color: white;
         font-size: 1.5vw;
     }
+    .boton-ver-mas-beneficios{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    }
+    .boton-ver-mas-beneficios button{
+        color: white;
+        font-weight: bold;
+        font-size: 1.2vw;
+        width: 10vw;
+    }
     /*TARJETAS */
     .contenido-comercios-tarjetas{
         display: grid;
@@ -416,6 +428,15 @@ a{
         width: 27vw;
         text-align: justify;
    }
+   /*BOTONES INICIO DE SESION*/
+   .boton-inicio-sesion  button{
+    width: 30vw;
+    color: white;
+   }
+   .boton-registrarte button{
+    width: 30vw;
+    color: white;
+   }
   
 @media only screen and (max-width: 600px) {
     button{
@@ -428,30 +449,6 @@ a{
         text-transform: uppercase;
     }
     /* CONTENIDO MENU */
-    .menu {
-        height: 10vh;
-        background-color: #026bd1;
-        align-items: center;
-    }
-
-    .menu-contenedor {
-        display: grid;
-        grid-template-areas:
-            "titulo"
-            "enlaces";
-        align-items: center; 
-    }
-
-    .menu-contenedor .menu-lista {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: auto;
-        font-weight: 100;
-        color: #ffff;
-    }
-
     .menu-contenedor .menu-titulo .menu__titulo {
         font-size: 8vw;
     }
@@ -465,34 +462,6 @@ a{
         align-items: center;
         font-weight: bold;
         margin: 0 20px 0 20px;
-    }
-
-    .principal-contenido{
-        display: grid;
-        grid-template-areas: 
-        "slider"
-        "destacados"
-        "comercio"
-        "beneficios";
-        padding: 1vw;
-    }
-
-    .opciones-slider{
-        grid-area: slider;
-    }
-
-    .opciones-destacados{
-        padding: 5vw 0;
-        grid-area: destacados;
-    }
-
-    .opciones-comercio{
-        grid-area: comercio;
-        padding: 5vw 0;
-    }
-
-    .opciones-beneficios{
-        grid-area: beneficios;
     }
 
     /* OPCIONES SLIDER */
@@ -534,78 +503,28 @@ a{
     }
 
     /* CONTENIDO SLIDER */
-
-    .contenido-slider{
-        display: flex;
-        padding: 5vw 0;
-        column-gap: 4vw;
-        width: 98vw;
-        overflow-x:auto;
-    }
-
-    .item{
-        display: inline-block
-    }
-
     .item-contenido button{
-        background-color: rgb(255, 255, 255);
-        display: flex;
         column-gap: 2.5vw;
         border-radius: 3vw;
         padding: 2vw 3vw;
         height: 4vh;
         width: 25vw;
-        box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
         font-size: 3vw;
     }
 
     /* CONTENIDO DESCATACADOS */
-
-    .contenedor-destacados{
-        display: grid;
-        grid-template-areas: 
-        "textos"
-        "multimedia";
-    }
-
-    .contenedor-destacados .textos{
-        grid-area: textos;
-        display: grid;
-        grid-template-areas: 
-        "titulo ver_mas";
-        justify-content: space-between;
-    }
-
-    .textos .destacados-titulo{
-        grid-area: titulo;
-    }
-
-    .textos .destacados-ver-mas{
-        grid-area: ver_mas
-    }
-    
     .destacados-titulo p{
         font-size: 4vw;
         font-weight: bold;
         text-transform: uppercase;
     }
-
     .destacados-ver-mas p{
         font-size: 4vw;
         font-weight: bold;
         text-transform: uppercase;
     }
-
-    .destacados-ver-mas{
-        grid-area: ver_destacados
-    }
-
     .descatados-multimedia{
-        grid-area: multimedia;
-        display: flex;
-        column-gap: 5vw;
-        width: 95vw;
-        overflow: auto;
+        width: 97vw; 
     }
 
     .descatados-multimedia img{
@@ -614,26 +533,6 @@ a{
         border-radius: 4vw;
     }
     /*CONTENIDO COMERCIO*/
-    .contenedor-comercio{
-        display: grid;
-        grid-template-areas: 
-        "textos"
-        "multimedia";
-
-    }
-    .contenedor-comercio .textos{
-        grid-area: textos;
-        display: grid;
-        grid-template-areas: 
-        "titulo comercio-ver-mas";
-        justify-content: space-between;
-    }
-    .textos .titulo-comercio{
-        grid-area: titulo;
-    }
-    .textos .contenido-comercio{
-        grid-area: comercio-ver-mas;
-    }
     .titulo-comercio p{
         font-size: 4vw;
         font-weight: bold;
@@ -645,26 +544,10 @@ a{
         text-transform: uppercase;
     }
     .comercio-multimedia{
-        grid-area: multimedia;
-        display: flex;
-        column-gap: 5vw;
-        width: 95vw;
-        overflow: auto;
+        width: 97vw;
         margin: 20px 0 20px 0;
-
-    }
-    .comercio-contenido{
-        display: grid;
-        grid-template-areas: 
-        "imagenes"
-        "titulo";
-    }
-    
-    .comercio-contenido .comercio-imagenes{
-        grid-area: imagenes;
     }
     .comercio-contenido .comercio-titulo{
-        grid-area: titulo;
         text-align: center;
         font-size: 4.5vw;
     }
@@ -674,18 +557,7 @@ a{
         border-radius: 50%;
     }
     /*CONTENEDOR BENEFICIOS*/
-    .beneficios-contenedor{
-        display: grid;
-        grid-template-areas: 
-        "texto"
-        "boletos";
-    }
-    .beneficios-contenedor .texto{
-        grid-area: texto;
-    }
-    .beneficios-contenedor .contenido-tickets{
-        grid-area: boletos;
-    }
+ 
     .texto .titulo-beneficios{
         font-weight: bold;
         text-transform: uppercase;
@@ -714,6 +586,10 @@ a{
     .tickets-contenido .texto-ticket a{
         font-size: 4vw;
     }
+    .boton-ver-mas-beneficios button{
+        font-size: 4vw;
+        width: 30vw;
+    }
     /*TARJETAS */
     .contenido-comercios-tarjetas{
         height: 17vh;
@@ -729,6 +605,11 @@ a{
    .texto-tarjeta{
         width: 60vw;     
    }
-    
-   
+   /*BOTONES INICIO DE SESION*/
+   .boton-inicio-sesion  button{
+    width: 80vw;
+   }
+   .boton-registrarte button{
+    width: 80vw;
+   }   
 }   

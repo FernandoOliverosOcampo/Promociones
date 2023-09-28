@@ -1,5 +1,40 @@
 const Vista = {
-  itemServicios: function (){
+  inicioSesionModal: function () {
+    const modalinicio = document.getElementById("modalinicio");
+    const inicioContent = modalinicio.querySelector(".modal-contenido-inicio");
+    inicioContent.innerHTML = `
+    <div class="modal-cabecera">
+    <div class="nombre">
+        <p>Inicio de sesión y registro</p>
+    </div
+  
+    <div class="cerrar">
+        <span class="btn-cerrar-modal cerrar-modal-informacion" id="cerrarModal">&times;</span>
+    </div
+</div>
+
+<div class="modal-cuerpo">
+<div class="titulo-inicio">
+    <h2>Inicio de sesión</h2>
+    <p>Registrate e inicia sesión para acceder a los beneficios de tu cuenta.</p>
+</div>
+<div class="inicio-modal">
+<div class="boton-inicio-sesion">
+<a href="./pages/login.html"><button>Iniciar sesión</button></a>
+</div>
+<div class="boton-registrarte">
+<a href="./pages/form.html"><button>Registrarte</button></a>
+</div>
+</div>
+    
+<div class="modal-pie2">
+
+</div>
+
+    `;
+    return inicioContent;
+  },
+  itemServicios: function () {
     const slider = document.getElementById("slider");
     const sliderContent = slider.querySelector(".contenido-slider");
 
@@ -44,12 +79,14 @@ const Vista = {
       <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
 </div>
 </div>
-    `
-    return sliderContent
+    `;
+    return sliderContent;
   },
-  destacados: function (){
-    const multimedia = document.getElementById('multimedia');
-    const multimediaContent = multimedia.querySelector('.descatados-multimedia')
+  destacados: function () {
+    const multimedia = document.getElementById("multimedia");
+    const multimediaContent = multimedia.querySelector(
+      ".descatados-multimedia"
+    );
     multimediaContent.innerHTML = `
     <a href="#"><img src="./img/2.jpg" alt="imagen multimedia" ></a>
     <a href="#"><img src="./img/3.jpg" alt="imagen multimedia" ></a>
@@ -59,12 +96,14 @@ const Vista = {
     <a href="#"><img src="./img/3.jpg" alt="imagen multimedia" ></a>
     <a href="#"><img src="./img/2.jpg" alt="imagen multimedia" ></a>
     <a href="#"><img src="./img/7.jpg" alt="imagen multimedia" ></a>
-    `
+    `;
     return multimediaContent;
   },
-  comercios: function(){
-    const comercio = document.getElementById('comercios-multimedia');
-    const comercioContent = comercio.querySelector('.contenedor-comercio-multimedia');
+  comercios: function () {
+    const comercio = document.getElementById("comercios-multimedia");
+    const comercioContent = comercio.querySelector(
+      ".contenedor-comercio-multimedia"
+    );
 
     comercioContent.innerHTML = `
     <div class="comercio-contenido" id="contenido-comercio">
@@ -175,12 +214,12 @@ const Vista = {
     </div>
     </div>
     </div>
-    `
-    return comercioContent
+    `;
+    return comercioContent;
   },
-  tickets: function(){
-    const ticket = document.getElementById('tickets');
-    const ticketsContent = ticket.querySelector('.contenedor-boletos')
+  tickets: function () {
+    const ticket = document.getElementById("tickets");
+    const ticketsContent = ticket.querySelector(".contenedor-boletos");
 
     ticketsContent.innerHTML = `
     <div class="contenido-tickets">
@@ -256,7 +295,7 @@ const Vista = {
 </div>
 </div>
     
-    `
+    `;
     return ticketsContent;
   },
   llenarModal: function () {
@@ -374,6 +413,21 @@ const Vista = {
       modal2.style.display = "none";
     });
   },
+  abrirModalSesion: function () {
+    modalinicio.style.display = "block";
+    window.onclick = function (event) {
+      if (event.target == modalinicio) {
+        modalinicio.style.display = "none";
+      }
+    };
+  },
+
+  cerrarModalSesion: function () {
+    const botonCerrarModal = modalinicio.querySelector("#cerrarModal");
+    botonCerrarModal.addEventListener("click", () => {
+      modalinicio.style.display = "none";
+    });
+  },
   mostrarModal: function () {
     const botonAbrirModal = document.getElementById("ver-mas");
 
@@ -396,8 +450,21 @@ const Vista = {
       this.cerrarModal2();
     });
   },
+  mostrarModalSesion: function () {
+    const botonAbrirModal = document.getElementById("inicio-sesion");
+
+    botonAbrirModal.addEventListener("click", () => {
+      // Abre el modal
+      this.abrirModalSesion();
+
+      // Obtén el botón de cerrar modal y agrega el evento de clic
+      this.cerrarModalSesion();
+    });
+  },
 };
 document.addEventListener("DOMContentLoaded", function () {
+  Vista.inicioSesionModal();
+  Vista.mostrarModalSesion()
   Vista.itemServicios();
   Vista.destacados();
   Vista.comercios();

@@ -37,7 +37,7 @@
     "titulo"
     "contenido"
     "botones";
-    height: 50vh;
+    height: 40vh;
     width: 40vw;
     justify-content: center;
     align-items: center;
@@ -60,6 +60,7 @@
     text-align: start;
     width: 31vw;
     margin: 10px;
+    font-weight: bold;
 }
 .login-contenido input{
     height: 5.5vh;
