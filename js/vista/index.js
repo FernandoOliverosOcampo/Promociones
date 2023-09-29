@@ -1,4 +1,6 @@
+import Controlador from "../controlador/controlador-pagina-principal.js";
 const Vista = {
+  //CONTENIDO DE LA PAGINA
   inicioSesionModal: function () {
     const modalinicio = document.getElementById("modalinicio");
     const inicioContent = modalinicio.querySelector(".modal-contenido-inicio");
@@ -229,8 +231,7 @@ const Vista = {
         <div class="tickets-contenido">
             <div class="texto-ticket">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-
-                <button><a href="#">20%</a></button>
+                <button><a href="./pages/paginas-beneficios.html" target="_blank">20%</a></button>
             </div>
         </div>
     </div>
@@ -242,7 +243,7 @@ const Vista = {
         <div class="texto-ticket">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-            <button><a href="#">20%</a></button>
+            <button><a href="./pages/paginas-beneficios.html" target="_blank">20%</a></button>
         </div>
     </div>
 </div>
@@ -254,7 +255,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <button><a href="#">20%</a></button>
+        <button><a href="./pages/paginas-beneficios.html" target="_blank">20%</a></button>
     </div>
 </div>
 </div>
@@ -266,7 +267,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <button><a href="#">20%</a></button>
+        <button><a href="./pages/paginas-beneficios.html" target="_blank">20%</a></button>
     </div>
 </div>
 </div>
@@ -278,7 +279,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <button><a href="#">20%</a></button>
+        <button><a href="./pages/paginas-beneficios.html" target="_blank">20%</a></button>
     </div>
 </div>
 </div>
@@ -290,7 +291,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <button><a href="#">20%</a></button>
+        <button><a href="./pages/paginas-beneficios.html" target="_blank">20%</a></button>
     </div>
 </div>
 </div>
@@ -367,7 +368,7 @@ const Vista = {
                                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                                 Sit sequi unde beatae animi nostrum atque.</p>
 
-                                <button><a href="#">20%</a></button>
+                                <button><a href="./pages/paginas-beneficios.html">20%</a></button>
                             </div>
                         </div>
   
@@ -383,94 +384,49 @@ const Vista = {
         `;
     return modalContent2;
   },
-  abrirModal: function () {
-    modal.style.display = "block";
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    };
-  },
+  llenarMapa: function(){
+    const modalmapa = document.getElementById('modalmapa');
+    const mapaContent = modalmapa.querySelector('.modal-contenido');
 
-  cerrarModal: function () {
-    const botonCerrarModal = modal.querySelector("#cerrarModal");
-    botonCerrarModal.addEventListener("click", () => {
-      modal.style.display = "none";
-    });
-  },
-  abrirModal2: function () {
-    modal2.style.display = "block";
-    window.onclick = function (event) {
-      if (event.target == modal2) {
-        modal2.style.display = "none";
-      }
-    };
-  },
+   
+    mapaContent.innerHTML = `
+    <div class="modal-cabecera">
+    <div class="nombre">
+        <p>Mapa</p>
+    </div
+  
+    <div class="cerrar">
+        <span class="btn-cerrar-modal cerrar-modal-informacion" id="cerrarModal">&times;</span>
+    </div
+</div>
 
-  cerrarModal2: function () {
-    const botonCerrarModal = modal2.querySelector("#cerrarModal");
-    botonCerrarModal.addEventListener("click", () => {
-      modal2.style.display = "none";
-    });
+<div class="modal-cuerpo">
+<div id="mapa">
+
+</div>
+</div>
+
+   `
+    return mapaContent;
+
   },
-  abrirModalSesion: function () {
-    modalinicio.style.display = "block";
-    window.onclick = function (event) {
-      if (event.target == modalinicio) {
-        modalinicio.style.display = "none";
-      }
-    };
-  },
-
-  cerrarModalSesion: function () {
-    const botonCerrarModal = modalinicio.querySelector("#cerrarModal");
-    botonCerrarModal.addEventListener("click", () => {
-      modalinicio.style.display = "none";
-    });
-  },
-  mostrarModal: function () {
-    const botonAbrirModal = document.getElementById("ver-mas");
-
-    botonAbrirModal.addEventListener("click", () => {
-      // Abre el modal
-      this.abrirModal();
-
-      // Obtén el botón de cerrar modal y agrega el evento de clic
-      this.cerrarModal();
-    });
-  },
-  mostrarModal2: function () {
-    const botonAbrirModal = document.getElementById("comercio");
-
-    botonAbrirModal.addEventListener("click", () => {
-      // Abre el modal
-      this.abrirModal2();
-
-      // Obtén el botón de cerrar modal y agrega el evento de clic
-      this.cerrarModal2();
-    });
-  },
-  mostrarModalSesion: function () {
-    const botonAbrirModal = document.getElementById("inicio-sesion");
-
-    botonAbrirModal.addEventListener("click", () => {
-      // Abre el modal
-      this.abrirModalSesion();
-
-      // Obtén el botón de cerrar modal y agrega el evento de clic
-      this.cerrarModalSesion();
-    });
-  },
+  //MOSTRAR LOS ELEMENTOS DE LA PAGINA
+  motrarElmentosPagina: function(){
+    this.inicioSesionModal();
+    this.itemServicios();
+    this.destacados();
+    this.comercios();
+    this.tickets();
+    this.llenarModal();
+    this.llenarModal2();
+    this.llenarMapa();
+  }
+  
 };
+
+//ELEMENTOS DEL DOM
 document.addEventListener("DOMContentLoaded", function () {
-  Vista.inicioSesionModal();
-  Vista.mostrarModalSesion()
-  Vista.itemServicios();
-  Vista.destacados();
-  Vista.comercios();
-  Vista.tickets();
-  Vista.llenarModal();
-  Vista.mostrarModal();
-  Vista.llenarModal2();
-  Vista.mostrarModal2();
+  Vista.motrarElmentosPagina();
+  Controlador.mapaCercaDeMi();
+  Controlador.controlarLosModales();
 });
