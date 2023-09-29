@@ -278,7 +278,8 @@ li p:hover{
         text-transform: uppercase;
         text-align: center;
     }
-    .modal-mapa .modal-contenido {    
+    .modal-mapa .modal-contenido {   
+        margin: 50% auto; 
         height: 52vh;
         width: 90vw;    
     }
