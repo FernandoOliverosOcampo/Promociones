@@ -35,8 +35,6 @@ a{
     text-transform: uppercase;
 }
 
-
-
 .hero {
     display: grid;
     grid-template-areas:
@@ -44,19 +42,15 @@ a{
         "principal-contenedor"
         "footer";
     grid-template-columns: auto;
-    grid-template-rows: auto;
-   
-   
+    grid-template-rows: auto;   
 }
-
 /* CONTENIDO MENU */
 .menu {
     grid-area: menu;
     display: grid;
     height: 10vh;
     background-color: #026bd1;
-    width: auto;
-    
+    width: auto;    
 }
 .menu-contenedor {
     display: grid;
@@ -66,9 +60,7 @@ a{
 } 
 .menu-lista {
     grid-area: enlaces;
-    
 }
-
 .menu-contenedor .menu-lista {
     display: flex;
     flex-direction: row;

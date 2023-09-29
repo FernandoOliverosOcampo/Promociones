@@ -8,6 +8,13 @@
     font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
     line-height: 1.6;
 }
+li p{
+    font-size: 1.5vw;
+    text-transform: uppercase;
+}
+li p:hover{
+    color: #b5d0eb;
+}
 /*MODAL MAPA*/
 .modal-mapa {
     display: none;
@@ -266,6 +273,11 @@
 
 
 @media only screen and (max-width: 600px) {
+    li p{
+        font-size: 5vw;
+        text-transform: uppercase;
+        text-align: center;
+    }
     .modal-mapa .modal-contenido {    
         height: 52vh;
         width: 90vw;    
