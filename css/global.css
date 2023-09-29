@@ -27,7 +27,7 @@
     height: 72vh;
     width: 90vw;
     background-color: #fefefe;
-    margin: 2% auto;
+    margin: 5.5% auto;
     padding: 1vw;
     border-radius: 0.4vw;
     grid-template-areas:
@@ -35,13 +35,13 @@
         "cuerpo";
     grid-template-rows: 5vh 90vh;
 }
-
 .modal-mapa .modal-cabecera {
     grid-area: cabecera;
     display: grid;
     grid-template-areas: 
     "nombre cerrar";
     justify-content: space-between;
+    height: 2vh;
 }
 .modal-mapa .modal-cabecera .nombre{
     grid-area: nombre;
@@ -266,11 +266,9 @@
 
 
 @media only screen and (max-width: 600px) {
-    .modal-mapa .modal-contenido {
-       
+    .modal-mapa .modal-contenido {    
         height: 52vh;
-        width: 90vw;
-       
+        width: 90vw;    
     }
     
     .modal .modal-contenido {
