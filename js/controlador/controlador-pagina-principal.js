@@ -1,6 +1,5 @@
 const Controlador = {
     mapaCercaDeMi: function(){
-        // Obtener referencias a elementos HTML
     var mapa = document.getElementById("mapa");
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function(position) {

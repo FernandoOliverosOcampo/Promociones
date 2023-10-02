@@ -8,6 +8,68 @@
     font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
     line-height: 1.6;
 }
+button{
+    height: 6vh;
+    width: 7vw;
+    background: #026bd1;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+button:hover{
+    background: rgb(112, 144, 250);
+    color: black;
+    
+}
+/*TICKETS*/
+.contenido-tickets{
+    display: grid;
+    grid-template-areas: 
+    "imagen contenido";
+    background:  white;
+    box-shadow:  3px 3px 3px 1px rgba(0, 0, 0, 0.2);
+    height: 15vh;
+    border-radius: 1vw;
+    width: 40vw;
+    column-gap: 2vw;
+    padding: 2vw;
+
+}
+.imagen-tickets{
+    grid-area: imagen;
+   
+}
+.imagen-tickets img{
+    height: 15vh;
+    width: 7vw;
+    border-radius: 50%;
+}
+.tickets-contenido{
+    grid-area: contenido;
+}
+.tickets-contenido .texto-ticket{
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    text-align: justify;
+     
+}
+.tickets-contenido .texto-ticket a{
+    color: white;
+    font-size: 1.5vw;
+}
+/*DESTACADO*/
+.descatado-multimedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.descatado-multimedia img{
+    height: 45vh;
+    width: 40vw;
+    border-radius: 1vw;
+}
 li p{
     font-size: 1.5vw;
     text-transform: uppercase;
@@ -273,13 +335,18 @@ li p:hover{
 
 
 @media only screen and (max-width: 600px) {
+    button{
+        height: 4vh;
+        width: 25vw;
+    }
+   
     li p{
         font-size: 5vw;
         text-transform: uppercase;
         text-align: center;
     }
-    .modal-mapa .modal-contenido {   
-        margin: 50% auto; 
+    .modal-mapa .modal-contenido { 
+        margin: 50% auto;   
         height: 52vh;
         width: 90vw;    
     }
@@ -311,6 +378,36 @@ li p:hover{
 }
 .modal-inicio .modal-cuerpo .titulo-inicio p{
     width: 80vw;
+}
+/*TICKETS*/
+.contenido-tickets{
+    height: 20vh;
+    width: 87vw;
+    column-gap: 4.5vw;
+    padding: 2vw;
+}
+.imagen-tickets img{
+    height: 10vh;
+    width: 20vw;
+    border-radius: 50%;
+    padding: 10vw 0;
+}
+.tickets-contenido .texto-ticket{
+    width: 60vw;
+    font-size: 4vw;
+    padding: 2vw 0;
+}
+.tickets-contenido .texto-ticket a{
+    font-size: 4vw;
+}
+.tickets-contenido .texto-ticket button{
+    height: 4vh;
+    width: 25vw;
+}
+.descatado-multimedia img{
+    height: 25vh;
+    width: 70vw;
+    border-radius: 1vw;
 }
 
   

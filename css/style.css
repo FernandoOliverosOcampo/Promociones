@@ -15,20 +15,6 @@ body{
     background-color: rgb(245, 243, 246);
 }
 
-button{
-    height: 6vh;
-    width: 7vw;
-    background: #026bd1;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0;
-}
-button:hover{
-    background: rgb(112, 144, 250);
-    color: black;
-    
-}
 a{
     color: black;
     font-size: 1.5vw;
@@ -79,6 +65,7 @@ a{
 }
 .menu-contenedor .menu-lista .menu__item {
     color: var(--blanco);
+    text-transform: uppercase;
 }
 
 .menu-contenedor .menu-lista .menu__item a {
@@ -122,7 +109,6 @@ a{
 .opciones-beneficios{
     grid-area: beneficios;
 }
-
   /* OPCIONES SLIDER */
   .opciones-slider .contenedor-buscador{
     display: flex;
@@ -378,7 +364,7 @@ a{
         text-align: justify;
          
     }
-    .tickets-contenido .texto-ticket a{
+    .tickets-contenido .texto-ticket button{
         color: white;
         font-size: 1.5vw;
     }
@@ -435,10 +421,6 @@ a{
    }
   
 @media only screen and (max-width: 600px) {
-    button{
-        height: 4vh;
-        width: 25vw;
-    }
     a{
         color: black;
         font-size: 4vw;
@@ -579,7 +561,7 @@ a{
         font-size: 4vw;
         padding: 2vw 0;
     }
-    .tickets-contenido .texto-ticket a{
+    .tickets-contenido .texto-ticket button{
         font-size: 4vw;
     }
     .boton-ver-mas-beneficios button{
