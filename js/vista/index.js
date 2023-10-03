@@ -231,7 +231,7 @@ const Vista = {
         <div class="tickets-contenido">
             <div class="texto-ticket">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-               <a href="./pages/paginas-beneficios.html" target="_blank"> <button>20%</button></a>
+               <a href="./pages/paginas-beneficios-tickest.html" target="_blank"> <button>20%</button></a>
             </div>
         </div>
     </div>
@@ -243,7 +243,7 @@ const Vista = {
         <div class="texto-ticket">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-            <a href="./pages/paginas-beneficios.html" target="_blank"> <button>20%</button></a>
+            <a href="./pages/paginas-beneficios-tickest.html" target="_blank"> <button>20%</button></a>
         </div>
     </div>
 </div>
@@ -255,7 +255,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <a href="./pages/paginas-beneficios.html" target="_blank"> <button>20%</button></a>
+        <a href="./pages/paginas-beneficios-whatsapp.html" target="_blank"> <button>20%</button></a>
     </div>
 </div>
 </div>
@@ -267,7 +267,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <a href="./pages/paginas-beneficios.html" target="_blank"> <button>20%</button></a>
+        <a href="./pages/paginas-beneficios-tickest.html" target="_blank"> <button>20%</button></a>
     </div>
 </div>
 </div>
@@ -279,7 +279,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <a href="./pages/paginas-beneficios.html" target="_blank"> <button>20%</button></a>
+        <a href="./pages/paginas-beneficios-whatsapp.html" target="_blank"> <button>20%</button></a>
     </div>
 </div>
 </div>
@@ -291,7 +291,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <a href="./pages/paginas-beneficios.html" target="_blank"> <button>20%</button></a>
+        <a href="./pages/paginas-beneficios-whatsapp.html" target="_blank"> <button>20%</button></a>
     </div>
 </div>
 </div>
