@@ -30,7 +30,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="../img/2.jpg" alt="logo comercio">
+          <img src="../img/2.webp" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">
@@ -42,7 +42,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="../img/2.jpg" alt="logo comercio">
+          <img src="../img/2.webp" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">
@@ -54,7 +54,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="../img/2.jpg" alt="logo comercio">
+          <img src="../img/2.webp" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">
@@ -66,7 +66,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="../img/2.jpg" alt="logo comercio">
+          <img src="../img/2.webp" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">
@@ -78,7 +78,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="../img/2.jpg" alt="logo comercio">
+          <img src="../img/2.webp" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">
@@ -90,7 +90,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="../img/2.jpg" alt="logo comercio">
+          <img src="../img/2.webp" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">
@@ -102,7 +102,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="../img/2.jpg" alt="logo comercio">
+          <img src="../img/2.webp" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">
@@ -114,7 +114,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="../img/2.jpg" alt="logo comercio">
+          <img src="../img/2.webp" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">

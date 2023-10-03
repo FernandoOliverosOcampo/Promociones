@@ -90,14 +90,14 @@ const Vista = {
       ".descatados-multimedia"
     );
     multimediaContent.innerHTML = `
-    <a href="#"><img src="./img/2.jpg" alt="imagen multimedia" ></a>
-    <a href="#"><img src="./img/3.jpg" alt="imagen multimedia" ></a>
-    <a href="#"><img src="./img/6.jpg" alt="imagen multimedia" ></a>
-    <a href="#"><img src="./img/7.jpg" alt="imagen multimedia" ></a>
-    <a href="#"><img src="./img/6.jpg" alt="imagen multimedia" ></a>
-    <a href="#"><img src="./img/3.jpg" alt="imagen multimedia" ></a>
-    <a href="#"><img src="./img/2.jpg" alt="imagen multimedia" ></a>
-    <a href="#"><img src="./img/7.jpg" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/2.webp" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/7.webp" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/3.webp" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/6.webp" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/7.webp" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/3.webp" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/6.webp" alt="imagen multimedia" ></a>
+    <a href="#"><img src="./img/2.webp" alt="imagen multimedia" ></a>
     `;
     return multimediaContent;
   },
@@ -110,7 +110,7 @@ const Vista = {
     comercioContent.innerHTML = `
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/3.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/7.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -119,7 +119,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/6.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/6.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -128,7 +128,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/2.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -137,7 +137,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/7.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/3.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -146,7 +146,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/6.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -155,7 +155,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/3.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/3.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -164,7 +164,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/6.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/7.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -173,7 +173,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/7.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/2.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -182,7 +182,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/6.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -191,7 +191,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/7.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -200,7 +200,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/2.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -209,7 +209,7 @@ const Vista = {
     </div>
     <div class="comercio-contenido" id="contenido-comercio">
     <div class="comercio-imagenes">
-        <a href=""><img src="./img/2.jpg" alt="logo comercio"></a>
+        <a href=""><img src="./img/3.webp" alt="logo comercio"></a>
     </div>
     <div class="comercio-titulo">
         <p>Redbull</p>
@@ -226,7 +226,7 @@ const Vista = {
     ticketsContent.innerHTML = `
     <div class="contenido-tickets">
         <div class="imagen-tickets">
-              <img src="./img/2.jpg" alt="logo comercio">
+              <img src="./img/2.webp" alt="logo comercio">
         </div>
         <div class="tickets-contenido">
             <div class="texto-ticket">
@@ -237,7 +237,7 @@ const Vista = {
     </div>
     <div class="contenido-tickets">
     <div class="imagen-tickets">
-          <img src="./img/2.jpg" alt="logo comercio">
+          <img src="./img/2.webp" alt="logo comercio">
     </div>
     <div class="tickets-contenido">
         <div class="texto-ticket">
@@ -249,7 +249,7 @@ const Vista = {
 </div>
 <div class="contenido-tickets">
 <div class="imagen-tickets">
-      <img src="./img/2.jpg" alt="logo comercio">
+      <img src="./img/2.webp" alt="logo comercio">
 </div>
 <div class="tickets-contenido">
     <div class="texto-ticket">
@@ -261,7 +261,7 @@ const Vista = {
 </div>
 <div class="contenido-tickets">
 <div class="imagen-tickets">
-      <img src="./img/2.jpg" alt="logo comercio">
+      <img src="./img/2.webp" alt="logo comercio">
 </div>
 <div class="tickets-contenido">
     <div class="texto-ticket">
@@ -273,7 +273,7 @@ const Vista = {
 </div>
 <div class="contenido-tickets">
 <div class="imagen-tickets">
-      <img src="./img/2.jpg" alt="logo comercio">
+      <img src="./img/2.webp" alt="logo comercio">
 </div>
 <div class="tickets-contenido">
     <div class="texto-ticket">
@@ -285,7 +285,7 @@ const Vista = {
 </div>
 <div class="contenido-tickets">
 <div class="imagen-tickets">
-      <img src="./img/2.jpg" alt="logo comercio">
+      <img src="./img/2.webp" alt="logo comercio">
 </div>
 <div class="tickets-contenido">
     <div class="texto-ticket">
@@ -319,21 +319,17 @@ const Vista = {
                 <h2>Destacados</h2>
             </div>
             <div class="destacados-modal">
-            <a href="#"><img src="./img/3.jpg" alt="logo comercio" ></a>
-            <a href="#"><img src="./img/2.jpg" alt="logo comercio"></a>
-            <a href="#"><img src="./img/3.jpg" alt="logo comercio"></a>
-            <a href="#"><img src="./img/6.jpg" alt="logo comercio"></a>
-            <a href="#"><img src="./img/7.jpg" alt="logo comercio"></a>
-            <a href="#"><img src="./img/2.jpg" alt="logo comercio"></a>
-            <a href="#"><img src="./img/7.jpg" alt="logo comercio"></a>
-            <a href="#"><img src="./img/2.jpg" alt="logo comercio"></a>
-            <a href="#"><img src="./img/3.jpg" alt="logo comercio"></a>
-            <a href="#"><img src="./img/6.jpg" alt="logo comercio"></a>
+            <a href="#"><img src="./img/2.webp" alt="logo comercio" ></a>
+            <a href="#"><img src="./img/3.webp" alt="logo comercio"></a>
+            <a href="#"><img src="./img/6.webp" alt="logo comercio"></a>
+            <a href="#"><img src="./img/7.webp" alt="logo comercio"></a>
+            <a href="#"><img src="./img/3.webp" alt="logo comercio"></a>
+            <a href="#"><img src="./img/7.webp" alt="logo comercio"></a>
+            <a href="#"><img src="./img/6.webp" alt="logo comercio"></a>
+            <a href="#"><img src="./img/2.webp" alt="logo comercio"></a>
+            <a href="#"><img src="./img/7.webp" alt="logo comercio"></a>
+            <a href="#"><img src="./img/6.webp" alt="logo comercio"></a>
         </div>
-            </div>
-                
-            <div class="modal-pie">
-          
             </div>
         `;
     return modalContent;
@@ -361,7 +357,7 @@ const Vista = {
             <div class="comercios-tarjetas-contenedor">
                    <div class="contenido-comercios-tarjetas">
                         <div class="imagen-tarjetas">
-                            <img src="./img/2.jpg" alt="logo comercio">
+                            <img src="./img/2.webp" alt="logo comercio">
                         </div>
                         <div class="tarjetas-contenido">
                             <div class="texto-tarjeta">
