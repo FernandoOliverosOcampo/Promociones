@@ -24,16 +24,24 @@
                 </div>
                 <div class="login-contenido">
                     <label for="">Número de identificación: </label>
-                    <input type="text", placeholder="Número de identificación">
+                    <input type="text", placeholder="Número de identificación" id="idnumero">
                 </div>
                 <div class="login-botones">
-                    <a href=""><button type="submit">Ingresar</button></a>
+                    <a id="btnIngresar"><button type="submit">Ingresar</button></a>
                     <a href="form.html">¿No tienes una cuenta?, Registrate aquí.</a>
                 </div>
             </div>    
         </div>
 
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsonwebtoken@8.5.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../js/vista/vista-login.js"  ></script>
+ 
+
+
     
 </body>
 </html>

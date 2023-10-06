@@ -1,4 +1,15 @@
+import Modelo from "../modelo/modelo-pagina-principal.js";
+import Vista from "../vista/pagina-principal.js"
 const Controlador = {
+  async mostrarContenido(){
+    try {
+      const res = await Modelo.datosMostrar();
+      Vista.comercios(res.data)
+  } catch (err) {
+      console.error(err)
+  }
+
+  },
     mapaCercaDeMi: function(){
     var mapa = document.getElementById("mapa");
     if ("geolocation" in navigator) {

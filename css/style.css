@@ -274,7 +274,7 @@ a{
         text-transform: uppercase;
         font-weight: bold;
     }
-    .contenedor-comercio-multimedia{
+   .comercio-multimedia{
         grid-area: multimedia;
         display: flex;
         column-gap: 2vw;
@@ -298,6 +298,7 @@ a{
         grid-area: titulo;
         text-align: center;
         font-size: 1.2vw;
+        width: 7vw;
     }
     .comercio-imagenes img{
         height: 15vh;
