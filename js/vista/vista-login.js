@@ -2,14 +2,16 @@ import Controlador from '../controlador/controlador-login.js'
 const Vista ={
     inicioSesion(){
         const btnIngresar = document.getElementById('btnIngresar');
-
         btnIngresar.onclick = function () {
             Controlador.iniciarSesion()
           }
     },
     datoInicioSesion(){
-        const identificacion = document.querySelector('#idnumero').value;
-        return {identificacion};
+        const email = document.getElementById('correo').value;
+        const password = document.getElementById('contrasena').value;
+        
+        return {email, password};
+        
     },
     mostrarMensajeError(mensaje) {
         Swal.fire({
@@ -23,7 +25,8 @@ const Vista ={
       console.log(mensaje);
     },
     limpiarCampos() {
-        identificacion.value = "";
+        email.value = "";
+        password.value ="";
     },
     redirigirAIndex() {
         location.href = ("../index.html");

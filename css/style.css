@@ -412,13 +412,22 @@ a{
         text-align: justify;
    }
    /*BOTONES INICIO DE SESION*/
+   .boton-cerrar-sesion button{
+    width: 30vw;
+    color: white;
+    font-weight: bold;
+   }
    .boton-inicio-sesion  button{
     width: 30vw;
     color: white;
+    font-weight: bold;
+  
    }
    .boton-registrarte button{
     width: 30vw;
     color: white;
+    font-weight: bold;
+
    }
   
 @media only screen and (max-width: 600px) {
@@ -585,6 +594,9 @@ a{
         width: 60vw;     
    }
    /*BOTONES INICIO DE SESION*/
+   .boton-cerrar-sesion button{
+    width: 80vw;
+   }
    .boton-inicio-sesion  button{
     width: 80vw;
    }

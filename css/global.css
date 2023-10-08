@@ -294,9 +294,8 @@ li p:hover{
     border-radius: 0.4vw;
     grid-template-areas:
         "cabecera"
-        "cuerpo"
-        "pie";
-    grid-template-rows: 5vh auto 5vh;
+        "cuerpo";
+    grid-template-rows: 5vh auto;
 }
 
 .modal-inicio .modal-cabecera {
@@ -334,10 +333,12 @@ li p:hover{
 }
 
 
+/*RESPONSIVE*/
 @media only screen and (max-width: 600px) {
     button{
         height: 4vh;
         width: 25vw;
+        
     }
    
     li p{

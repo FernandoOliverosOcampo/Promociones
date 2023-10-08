@@ -2,24 +2,29 @@ import Vista from "../vista/vista-login.js";
 import Modelo from "../modelo/modelo-login.js";
 const Controlador ={
     async iniciarSesion(){
-        const identificacion = Vista.datoInicioSesion();
+        const {email, password} = Vista.datoInicioSesion();
         try {
-            const res = await Modelo.inicioSesion(identificacion);
-            if (res.data.acceso == "AUTORIZADO") {
+            const res = await Modelo.inicioSesion(email, password);
+
+            console.log(res)
+            console.log(res.data)
+            if (res.data.access_token.length > 1) {
                 const access_token = res.data.access_token;
                 localStorage.setItem("access_token", access_token);
-                Vista.mostrarMensajeSatisfactorio("Inicio de sesión exitoso");
-                Vista.redirigirAIndex();
+                Vista.mostrarMensajeSatisfactorio()
+                Vista.redirigirAIndex()
               } else {
                 Vista.mostrarMensajeError("Usuario no encontrado")
-                Vista.limpiarCampos();
+               
               }
         } catch (error) {
             Vista.mostrarMensajeError('Error al iniciar sesión');
-            console.error(err);
-            Vista.limpiarCampos();
+            console.error(error);
+      
+            
         }
-    }
+    },
+
 }
 export default Controlador;
 

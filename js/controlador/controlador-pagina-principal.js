@@ -1,10 +1,37 @@
 import Modelo from "../modelo/modelo-pagina-principal.js";
 import Vista from "../vista/pagina-principal.js"
 const Controlador = {
+  // async mostrarUsuario(){
+  //   try {
+  //     const res = await Modelo.datosMostrarUsuarios();
+  //     Vista.inicioSesionModal(res.data)
+  // } catch (err) {
+  //     console.error(err)
+  // }
+
+  // },
   async mostrarContenido(){
     try {
       const res = await Modelo.datosMostrar();
       Vista.comercios(res.data)
+  } catch (err) {
+      console.error(err)
+  }
+
+  },
+  async mostrarContenidoModalDestacados(){
+    try {
+      const res = await Modelo.datosMostrar();
+      Vista.llenarModal(res.data)
+    } catch (error) {
+      console.error(error)
+    }
+
+  },
+  async mostrarContenidoDestacados(){
+    try {
+      const res = await Modelo.datosMostrar();
+      Vista.destacados(res.data)
   } catch (err) {
       console.error(err)
   }
@@ -71,6 +98,8 @@ const Controlador = {
     }
     },
     //FUNCIONES DE LOS MODALES
+
+  //CONTROLADOR MODAL DESTACADOS
   abrirModal: function () {
     modal.style.display = "block";
     window.onclick = function (event) {
@@ -79,41 +108,10 @@ const Controlador = {
       }
     };
   },
-
   cerrarModal: function () {
     const botonCerrarModal = modal.querySelector("#cerrarModal");
     botonCerrarModal.addEventListener("click", () => {
       modal.style.display = "none";
-    });
-  },
-  abrirModal2: function () {
-    modal2.style.display = "block";
-    window.onclick = function (event) {
-      if (event.target == modal2) {
-        modal2.style.display = "none";
-      }
-    };
-  },
-
-  cerrarModal2: function () {
-    const botonCerrarModal = modal2.querySelector("#cerrarModal");
-    botonCerrarModal.addEventListener("click", () => {
-      modal2.style.display = "none";
-    });
-  },
-  abrirModalSesion: function () {
-    modalinicio.style.display = "block";
-    window.onclick = function (event) {
-      if (event.target == modalinicio) {
-        modalinicio.style.display = "none";
-      }
-    };
-  },
-
-  cerrarModalSesion: function () {
-    const botonCerrarModal = modalinicio.querySelector("#cerrarModal");
-    botonCerrarModal.addEventListener("click", () => {
-      modalinicio.style.display = "none";
     });
   },
   mostrarModal: function () {
@@ -127,6 +125,22 @@ const Controlador = {
       this.cerrarModal();
     });
   },
+
+  //CONTROLADOR MODAL COMERCIOS
+  abrirModal2: function () {
+    modal2.style.display = "block";
+    window.onclick = function (event) {
+      if (event.target == modal2) {
+        modal2.style.display = "none";
+      }
+    };
+  },
+  cerrarModal2: function () {
+    const botonCerrarModal = modal2.querySelector("#cerrarModal");
+    botonCerrarModal.addEventListener("click", () => {
+      modal2.style.display = "none";
+    });
+  },
   mostrarModal2: function () {
     const botonAbrirModal = document.getElementById("comercio");
 
@@ -138,8 +152,24 @@ const Controlador = {
       this.cerrarModal2();
     });
   },
+
+  //CONTROLADOR MODAL INICIO SESION
+  abrirModalSesion: function () {
+    modalinicio.style.display = "block";
+    window.onclick = function (event) {
+      if (event.target == modalinicio) {
+        modalinicio.style.display = "none";
+      }
+    };
+  },
+  cerrarModalSesion: function () {
+    const botonCerrarModal = modalinicio.querySelector("#cerrarModal");
+    botonCerrarModal.addEventListener("click", () => {
+      modalinicio.style.display = "none";
+    });
+  },  
   mostrarModalSesion: function () {
-    const botonAbrirModal = document.getElementById("inicio-sesion");
+    const botonAbrirModal = document.getElementById("inicioSesion");
 
     botonAbrirModal.addEventListener("click", () => {
       // Abre el modal
@@ -149,6 +179,8 @@ const Controlador = {
       this.cerrarModalSesion();
     });
   },
+
+  //CONTROLADOR MODAL MAPA
   abrirModalMapa: function () {
     modalmapa.style.display = "block";
     window.onclick = function (event) {
@@ -175,10 +207,11 @@ const Controlador = {
       this.cerrarModalMapa();
     });
   },
+  //CONTROLADOR CERRAR SESION
   controlarLosModales:function(){
     this.mostrarModal();
-    this.mostrarModal2();
     this.mostrarModalSesion();
+    this.mostrarModal2();
     this.mostrarModalMapa()
   }
 
