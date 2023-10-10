@@ -1,15 +1,15 @@
 import Modelo from "../modelo/modelo-pagina-principal.js";
 import Vista from "../vista/pagina-principal.js"
 const Controlador = {
-  // async mostrarUsuario(){
-  //   try {
-  //     const res = await Modelo.datosMostrarUsuarios();
-  //     Vista.inicioSesionModal(res.data)
-  // } catch (err) {
-  //     console.error(err)
-  // }
+  async mostrarComerciosModal(){
+    try {
+      const res = await Modelo.datosMostrar();
+      Vista.llenarModal2(res.data)
+  } catch (err) {
+      console.error(err)
+  }
 
-  // },
+  },
   async mostrarContenido(){
     try {
       const res = await Modelo.datosMostrar();

@@ -168,18 +168,32 @@ a{
 
     .item-contenido button{
         display: flex;
-        padding: 1.2vw;
+        padding: 1.5vw;
         border: 1px solid transparent;
         border-radius: 4vw;
-        column-gap: 1.5vw;
+        column-gap: 1vw;
         height: 8vh;
-        width: 10vw;
+        width: 12vw;
         background-color: white;
         align-items: center;
         box-shadow:  2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-        font-size: 1.1vw;
+        font-size: 1vw;
         font-weight: bold;
     }
+    .item-contenido button#btneducacion,
+    .item-contenido button#btncomercios {
+        width: 10vw;
+    }
+ 
+    .item-contenido button#btnturismo {
+    width: 9vw;
+    }
+    .item-contenido button#btnseguros,
+    .item-contenido button#btnsalud{
+        width: 8.5vw;
+    }
+
+    
     .item-contenido button:hover{
         background-color: rgb(226, 226, 226);
     }
@@ -296,9 +310,9 @@ a{
     }
     .comercio-contenido .comercio-titulo{
         grid-area: titulo;
+    }
+    .comercio-contenido .comercio-titulo p{
         text-align: center;
-        font-size: 1.2vw;
-        width: 7vw;
     }
     .comercio-imagenes img{
         height: 15vh;
@@ -405,11 +419,12 @@ a{
    .texto-tarjeta{
         grid-area: contenido;
     }
-   .texto-tarjeta{
-        display: flex;
-        flex-direction: column;
-        width: 27vw;
-        text-align: justify;
+   .texto-tarjeta {
+        width: 20vw;
+        padding: 2.5vw 0;
+        text-align: start;
+       
+       
    }
    /*BOTONES INICIO DE SESION*/
    .boton-cerrar-sesion button{
@@ -496,8 +511,20 @@ a{
         border-radius: 3vw;
         padding: 2vw 3vw;
         height: 4vh;
-        width: 25vw;
+        width: 32vw;
         font-size: 3vw;
+    }
+    .item-contenido button#btneducacion,
+    .item-contenido button#btncomercios {
+        width: 25vw;
+    }
+ 
+    .item-contenido button#btnturismo {
+    width: 23vw;
+    }
+    .item-contenido button#btnseguros,
+    .item-contenido button#btnsalud{
+        width: 22vw;
     }
 
     /* CONTENIDO DESCATACADOS */
@@ -532,11 +559,12 @@ a{
         text-transform: uppercase;
     }
     .comercio-multimedia{
+        column-gap: 4.5vw;
         width: 97vw;
         margin: 20px 0 20px 0;
     }
     .comercio-contenido .comercio-titulo{
-        text-align: center;
+       
         font-size: 4.5vw;
     }
     .comercio-imagenes img{
@@ -581,7 +609,8 @@ a{
     /*TARJETAS */
     .contenido-comercios-tarjetas{
         height: 17vh;
-        width: 85vw;
+        width: 80vw;
+        column-gap: 3vw;
     }
    .imagen-tarjetas img{
     height: 10vh;
@@ -591,7 +620,10 @@ a{
     }
 
    .texto-tarjeta{
-        width: 60vw;     
+        width: 60vw;
+        padding: 18vw 0;
+        text-align: start;
+       
    }
    /*BOTONES INICIO DE SESION*/
    .boton-cerrar-sesion button{

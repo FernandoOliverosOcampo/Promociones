@@ -70,49 +70,47 @@ const Vista = {
     sliderContent.innerHTML = `
     <div class = "item">
       <div class = "item-contenido">
-            <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+            <button id="btnentretenimiento" ><i class="fa-solid fa-film"></i>  Entretenimiento</button>
       </div>
     </div>
     <div class = "item">
     <div class = "item-contenido">
-          <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+          <button id="btneducacion" ><i class="fa-solid fa-user-graduate" style="--fa-primary-color: #323d4e; --fa-secondary-color: #fbf789;"></i>  Educación</button>
     </div>
     </div>
     <div class = "item">
     <div class = "item-contenido">
-          <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+          <button id="btnturismo" ><i class="fa-solid fa-plane-departure"></i>  Turismo</button>
     </div>
   </div>
   <div class = "item">
   <div class = "item-contenido">
-        <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+        <button id="btnsalud" ><i class="fa-solid fa-hand-holding-medical"></i>   Salud</button>
   </div>
 </div>
 <div class = "item">
 <div class = "item-contenido">
-      <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+      <button id="btnspa" ><i class="fa-solid fa-spa"></i> Spa y belleza</button>
 </div>
 </div>
 <div class = "item">
 <div class = "item-contenido">
-      <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+      <button id="btncomercios"><i class="fa-regular fa-building"></i></i>  Comercios</button>
 </div>
 </div>
 <div class = "item">
 <div class = "item-contenido">
-      <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
+      <button id="btnseguros"><i class="fa-solid fa-shield-heart"></i></i> Seguros</button>
 </div>
 </div>
 <div class = "item">
-<div class = "item-contenido">
-      <button><i class="fa-solid fa-hand-holding-medical"></i>   Servicios</button>
-</div>
-</div>
+
     `;
-    return sliderContent;
+  slider.append(sliderContent);
   },
   destacados: function (data) {
-    data.forEach(element =>{
+    for(let i =0; i <12 && data.length; i++){
+        const element = data[i];
         const contenedor = document.getElementById('multimedia')
         const logo = element.imagen;
         const multimedia = document.createElement("div");
@@ -125,36 +123,75 @@ const Vista = {
         `;
         multimedia.append(multimediaContent)
         contenedor.append(multimedia)
-    })
+    }
+    // data.forEach(element =>{
+    //     const contenedor = document.getElementById('multimedia')
+    //     const logo = element.imagen;
+    //     const multimedia = document.createElement("div");
+    //     const multimediaContent = document.createElement("div");
+  
+    //     multimedia.classList = "multimedia";
+    //     multimediaContent.classList = ".descatados-multimedia";
+    //     multimediaContent.innerHTML = `
+    //     <a href="#"><img src="${logo}" alt="imagen multimedia" ></a>
+    //     `;
+    //     multimedia.append(multimediaContent)
+    //     contenedor.append(multimedia)
+    // })
   },
   comercios: function (data) {
-    data.forEach((element) => {
+    for(let i =0; i < 12 && data.length; i++){
+        const element = data[i];
+        const logo = element.imagen;
+        const lenguaje = element.nombre;
   
-      const logo = element.imagen;
-      const lenguaje = element.nombre;
+        const comercio = document.createElement("div");
+        const comercioContent = document.createElement("div");
+  
+        comercio.classList = "comercios-multimedia";
+        comercioContent.classList = "contenedor-comercio-multimedia";
+  
+        const contenedor = document.querySelector('.comercio-multimedia');
+  
+        comercioContent.innerHTML = `
+        <div class="comercio-contenido" id="contenido-comercio">
+            <div class="comercio-imagenes">
+                <a href=""><img src="${logo}" alt="logo comercio"></a>
+            </div>
+        <div class="comercio-titulo">
+            <p>${lenguaje}</p>
+        </div>
+        `;  
+        comercio.append(comercioContent) 
+        contenedor.append(comercio)
+    }
+    // data.forEach((element) => {
+  
+    //   const logo = element.imagen;
+    //   const lenguaje = element.nombre;
 
-      const comercio = document.createElement("div");
-      const comercioContent = document.createElement("div");
+    //   const comercio = document.createElement("div");
+    //   const comercioContent = document.createElement("div");
 
-      comercio.classList = "comercios-multimedia";
-      comercioContent.classList = "contenedor-comercio-multimedia";
+    //   comercio.classList = "comercios-multimedia";
+    //   comercioContent.classList = "contenedor-comercio-multimedia";
 
-      const contenedor = document.querySelector('.comercio-multimedia');
+    //   const contenedor = document.querySelector('.comercio-multimedia');
 
-      comercioContent.innerHTML = `
-      <div class="comercio-contenido" id="contenido-comercio">
-      <div class="comercio-imagenes">
-          <a href=""><img src="${logo}" alt="logo comercio"></a>
-      </div>
-      <div class="comercio-titulo">
-          <p>${lenguaje}</p>
-      </div>
-      </div>
-      </div>
-      `;  
-      comercio.append(comercioContent) 
-      contenedor.append(comercio)
-    });
+    //   comercioContent.innerHTML = `
+    //   <div class="comercio-contenido" id="contenido-comercio">
+    //   <div class="comercio-imagenes">
+    //       <a href=""><img src="${logo}" alt="logo comercio"></a>
+    //   </div>
+    //   <div class="comercio-titulo">
+    //       <p>${lenguaje}</p>
+    //   </div>
+    //   </div>
+    //   </div>
+    //   `;  
+    //   comercio.append(comercioContent) 
+    //   contenedor.append(comercio)
+    // });
    
   },
   tickets: function () {
@@ -278,11 +315,12 @@ const Vista = {
     });
   },
 
-  llenarModal2: function () {
-    const modal2 = document.getElementById("modal2");
-    const modalContent2 = modal2.querySelector(".modal-contenido2");
+  llenarModal2: function (data) {
+       
+        const modal2 = document.getElementById("modal2");
+        const modalContent2 = modal2.querySelector(".modal-contenido2");
 
-    modalContent2.innerHTML = `
+        modalContent2.innerHTML = `
             <div class="modal-cabecera2">
                 <div class="nombre">
                     <p>Comercios</p>
@@ -292,37 +330,40 @@ const Vista = {
                     <span class="btn-cerrar-modal cerrar-modal-informacion" id="cerrarModal">&times;</span>
                 </div
             </div>
-        
             <div class="modal-cuerpo2">
             <div class="titulo-comercios">
                 <h2>Comercios</h2>
             </div>
-            <div class="comercios-modal">
-            <div class="comercios-tarjetas-contenedor">
+            <div class="comercios-modal" id="modalComercios">
+            
+            </div>
+        `;
+        const comerciosContainer = modalContent2.querySelector('#modalComercios')
+        modal2.append(modalContent2);
+        this.agregarComerciosModal(data,comerciosContainer)
+        return modalContent2;
+  },
+  agregarComerciosModal: function(data, comerciosContainer){
+        data.forEach(element =>{
+            const logo = element.imagen;
+            const lenguaje = element.nombre;
+            const contenedor = document.createElement('div')
+            contenedor.classList='comercios-tarjetas-contenedor'
+            contenedor.innerHTML = `
                    <div class="contenido-comercios-tarjetas">
                         <div class="imagen-tarjetas">
-                            <img src="./img/2.webp" alt="logo comercio">
+                            <img src="${logo}" alt="logo comercio">
                         </div>
                         <div class="tarjetas-contenido">
                             <div class="texto-tarjeta">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                Sit sequi unde beatae animi nostrum atque.</p>
-
-                                <button><a href="./pages/paginas-beneficios.html">20%</a></button>
+                                <h3>${lenguaje}</h3> 
                             </div>
                         </div>
-  
-                    </div>
-                            
-       
-            </div>
-            </div>
-                
-            <div class="modal-pie2">
-          
-            </div>
-        `;
-    return modalContent2;
+                    </div>      
+            `
+           comerciosContainer.appendChild(contenedor)
+
+        });
   },
   llenarMapa: function () {
     const modalmapa = document.getElementById("modalmapa");
@@ -355,8 +396,6 @@ const Vista = {
         localStorage.removeItem("access_token")
         console.log("TOKEN REMOVIDO, SESION CERRADA")
         location.reload();
-        localStorage.removeItem("access_token")
-
     })
      
   },
@@ -365,7 +404,6 @@ const Vista = {
     this.inicioSesionModal();
     this.itemServicios();
     this.tickets();
-    this.llenarModal2();
     this.llenarMapa();
   },
 };
@@ -407,11 +445,12 @@ if(localStorage.getItem("access_token")){
         button.forEach(function(boton) {
             boton.disabled = true;
           });
-    }
+}
 
   Controlador.mostrarContenido();
   Controlador.mostrarContenidoDestacados()
   Controlador.mostrarContenidoModalDestacados();
+  Controlador.mostrarComerciosModal();
   Controlador.mapaCercaDeMi();
   Controlador.controlarLosModales(); 
 });

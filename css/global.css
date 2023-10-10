@@ -141,16 +141,15 @@ li p:hover{
 .modal .modal-contenido {
     display: grid;
     height: 90vh;
-    width: 80vw;
+    width: 85vw;
     background-color: #fefefe;
     margin: 2% auto;
     padding: 1vw;
     border-radius: 0.4vw;
     grid-template-areas:
         "cabecera"
-        "cuerpo"
-        "pie";
-    grid-template-rows: 5vh auto 5vh;
+        "cuerpo";
+    grid-template-rows: 5vh auto;
 }
 
 .modal .modal-cabecera {
@@ -183,9 +182,11 @@ li p:hover{
 }
 .modal .modal-cuerpo .destacados-modal{
     display: flex;
-    padding: 0 5.7vw;
+    padding: 0 2vw;
+    background-color: transparent;
     flex-direction: row;
-    column-gap: 1.5vw;
+    column-gap: 2vw;
+    row-gap: 2vw;
     justify-content: start;
     align-items: center;
     flex-wrap: wrap;
@@ -195,14 +196,8 @@ li p:hover{
     height: 30vh;
     width: auto;
     border-radius: 10px;
+    box-shadow: 3px 3px 3px 1px rgba(0, 0, 0, 0.2);
 }
-
-.modal-pie {
-    grid-area: pie;
-    
-}
-
-
 /* The Close Button */
 .btn-cerrar-modal {
     color: #aaa;
@@ -243,9 +238,8 @@ li p:hover{
     border-radius: 0.4vw;
     grid-template-areas:
         "cabecera"
-        "cuerpo"
-        "pie";
-    grid-template-rows: 5vh auto 5vh;
+        "cuerpo";
+    grid-template-rows: 5vh auto;
 }
 
 .modal2 .modal-cabecera2 {
@@ -267,8 +261,22 @@ li p:hover{
 
 .modal2 .modal-cuerpo2 {
     grid-area: cuerpo;
+    display: grid;
+    grid-template-areas: 
+    "titulo"
+    "contenido";
     overflow: auto;
+}
+.modal2 .modal-cuerpo2 .titulo-comercios{
+    grid-area: titulo;
+    text-align: center;
+}
+.modal2 .modal-cuerpo2 .comercios-modal{
+    grid-area: contenido;
+    padding: 3vw;
+    display: flex;
     flex-wrap: wrap;
+    gap: 2vw;
 }
 /*MODAL INICIO SESION*/
 .modal-inicio {
@@ -372,6 +380,8 @@ li p:hover{
         width: 80vw;
         border-radius: 10px;
     }
+    /*MODAL 2*/
+   
     /*MODAL INICIO SESION*/
 
 .modal-inicio .modal-contenido-inicio {
