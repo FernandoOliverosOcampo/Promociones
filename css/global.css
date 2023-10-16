@@ -374,10 +374,17 @@ li p:hover{
    
     .modal .modal-cuerpo .titulo-destacados h2{
         font-size: 4vw;
+        
+    }
+    .modal .modal-cuerpo .destacados-modal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .modal .modal-cuerpo .destacados-modal img{
-        height: 25vh;
-        width: 80vw;
+       
+        height: 22vh;
+        width: 60vw;
         border-radius: 10px;
     }
     /*MODAL 2*/

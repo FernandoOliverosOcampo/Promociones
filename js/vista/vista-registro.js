@@ -66,6 +66,7 @@ buttoRegistrar.addEventListener('click', () => {
             const apellido = document.getElementById('apellido').value;
             const segundoApellido = document.getElementById('segundoapellido').value;
             const correo = document.getElementById('correo').value;
+            const contrasena = document.getElementById('contraseña').value;
             const telefono = document.getElementById('telefono').value;
             const sexo = document.getElementById('sexo').value;
             const fechaNacimiento = document.getElementById('fecha').value;
@@ -73,7 +74,7 @@ buttoRegistrar.addEventListener('click', () => {
             let empresa = empresaInput.value;
           
           // Verificar campos vacíos
-          if (numeroCedula === '' || nombre=== '' || segundoNombre=== ''|| apellido==='' || segundoApellido === '' || correo === '' || telefono === '') {
+          if (numeroCedula === '' || nombre=== '' || segundoNombre=== ''|| apellido==='' || segundoApellido === '' || correo === '' || contrasena === ''  || telefono === '') {
             Swal.fire({
               icon: 'error',
               title: 'Campos vacíos',
@@ -85,7 +86,7 @@ buttoRegistrar.addEventListener('click', () => {
             empresa = 'Persona natural'
           }
         
-         Controlador.insertarDatos(numeroCedula, tipoDocumento, nombre, segundoNombre, apellido, segundoApellido, correo, telefono, sexo, fechaNacimiento, tipoCliente, empresa);
+         Controlador.insertarDatos(numeroCedula, tipoDocumento, nombre, segundoNombre, apellido, segundoApellido, correo, contrasena, telefono, sexo, fechaNacimiento, tipoCliente, empresa);
     
           // Limpiar los valores de los inputs
           document.getElementById('numerocedula').value ='';
@@ -94,6 +95,7 @@ buttoRegistrar.addEventListener('click', () => {
           document.getElementById('apellido').value = '';
           document.getElementById('segundoapellido').value = '';
           document.getElementById('correo').value = '';
+          document.getElementById('contraseña').value = '';
           document.getElementById('telefono').value = '';
           document.getElementById('fecha').value = '';
           document.getElementById('empresa').value = '';

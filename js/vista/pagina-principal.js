@@ -124,20 +124,6 @@ const Vista = {
         multimedia.append(multimediaContent)
         contenedor.append(multimedia)
     }
-    // data.forEach(element =>{
-    //     const contenedor = document.getElementById('multimedia')
-    //     const logo = element.imagen;
-    //     const multimedia = document.createElement("div");
-    //     const multimediaContent = document.createElement("div");
-  
-    //     multimedia.classList = "multimedia";
-    //     multimediaContent.classList = ".descatados-multimedia";
-    //     multimediaContent.innerHTML = `
-    //     <a href="#"><img src="${logo}" alt="imagen multimedia" ></a>
-    //     `;
-    //     multimedia.append(multimediaContent)
-    //     contenedor.append(multimedia)
-    // })
   },
   comercios: function (data) {
     for(let i =0; i < 12 && data.length; i++){
@@ -164,35 +150,7 @@ const Vista = {
         `;  
         comercio.append(comercioContent) 
         contenedor.append(comercio)
-    }
-    // data.forEach((element) => {
-  
-    //   const logo = element.imagen;
-    //   const lenguaje = element.nombre;
-
-    //   const comercio = document.createElement("div");
-    //   const comercioContent = document.createElement("div");
-
-    //   comercio.classList = "comercios-multimedia";
-    //   comercioContent.classList = "contenedor-comercio-multimedia";
-
-    //   const contenedor = document.querySelector('.comercio-multimedia');
-
-    //   comercioContent.innerHTML = `
-    //   <div class="comercio-contenido" id="contenido-comercio">
-    //   <div class="comercio-imagenes">
-    //       <a href=""><img src="${logo}" alt="logo comercio"></a>
-    //   </div>
-    //   <div class="comercio-titulo">
-    //       <p>${lenguaje}</p>
-    //   </div>
-    //   </div>
-    //   </div>
-    //   `;  
-    //   comercio.append(comercioContent) 
-    //   contenedor.append(comercio)
-    // });
-   
+    }   
   },
   tickets: function () {
     const ticket = document.getElementById("tickets");
@@ -206,7 +164,7 @@ const Vista = {
         <div class="tickets-contenido">
             <div class="texto-ticket">
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-               <a href="./pages/paginas-beneficios-tickest.html" target="_blank"> <button class="boton">20%</button></a>
+                <button class="boton" >20%</button>
             </div>
         </div>
     </div>
@@ -218,7 +176,7 @@ const Vista = {
         <div class="texto-ticket">
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-            <a href="./pages/paginas-beneficios-tickest.html" target="_blank"> <button class="boton" >20%</button></a>
+            <button class="boton" >20%</button>
         </div>
     </div>
 </div>
@@ -230,7 +188,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <a href="./pages/paginas-beneficios-whatsapp.html" target="_blank"> <button class="boton">20%</button></a>
+        <button class="boton" >20%</button>
     </div>
 </div>
 </div>
@@ -242,7 +200,18 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <a href="./pages/paginas-beneficios-tickest.html" target="_blank"> <button class="boton" >20%</button></a>
+        <button class="boton" >20%</button>
+    </div>
+</div>
+</div>
+<div class="contenido-tickets">
+<div class="imagen-tickets">
+      <img src="./img/2.webp" alt="logo comercio">
+</div>
+<div class="tickets-contenido">
+    <div class="texto-ticket">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
+            <button class="boton" >20%</button></a>
     </div>
 </div>
 </div>
@@ -254,19 +223,7 @@ const Vista = {
     <div class="texto-ticket">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
 
-        <a href="./pages/paginas-beneficios-whatsapp.html" target="_blank"> <button class="boton" >20%</button></a>
-    </div>
-</div>
-</div>
-<div class="contenido-tickets">
-<div class="imagen-tickets">
-      <img src="./img/2.webp" alt="logo comercio">
-</div>
-<div class="tickets-contenido">
-    <div class="texto-ticket">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-
-        <a href="./pages/paginas-beneficios-whatsapp.html" target="_blank"> <button class="boton" >20%</button></a>
+        <button class="boton" >20%</button>
     </div>
 </div>
 </div>
@@ -391,7 +348,6 @@ const Vista = {
   },
   cerrarSesion: function(){
     const cerrarBtn = document.getElementById('cerrarSesion');
-
     cerrarBtn.addEventListener('click', ()=>{
         localStorage.removeItem("access_token")
         console.log("TOKEN REMOVIDO, SESION CERRADA")
@@ -406,6 +362,25 @@ const Vista = {
     this.tickets();
     this.llenarMapa();
   },
+  ticketsBotones(){
+    var button = document.querySelectorAll('.boton')
+    button.forEach(function(boton) {
+        boton.addEventListener('click', function() {
+            if(localStorage.getItem("access_token")){    
+                location.href=('./pages/paginas-beneficios-tickest.html')
+            }
+            else{
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Oops...',
+                    text: 'Primero debes iniciar sesión',
+                });
+                // boton.disabled = true;
+            }
+        });   
+    });
+   
+  }
 };
 export default Vista;
 //ELEMENTOS DEL DOM
@@ -441,12 +416,9 @@ if(localStorage.getItem("access_token")){
         li.appendChild(a)
         a.appendChild(i)
         ul.appendChild(li);
-        var button = document.querySelectorAll('.boton')
-        button.forEach(function(boton) {
-            boton.disabled = true;
-          });
-}
-
+     
+}    
+  Vista.ticketsBotones()
   Controlador.mostrarContenido();
   Controlador.mostrarContenidoDestacados()
   Controlador.mostrarContenidoModalDestacados();
