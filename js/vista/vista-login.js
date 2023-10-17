@@ -32,7 +32,6 @@ const Vista ={
         location.href = ("../index.html");
     }
 }
-
 document.addEventListener('DOMContentLoaded', function(){
     Vista.inicioSesion()
 })

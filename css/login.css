@@ -1,49 +1,70 @@
 @import url(global.css);
-
+.section-login{
+    background-color: transparent;
+}
 .container-login{
     display: grid;
     grid-template-areas: 
-    "informacion login";
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    "login informacion ";
     align-items: center;
-    justify-content: space-evenly;
-    height: 100vh;
+    justify-content: space-between;
+    
 }
 .container-izquierda{
-    grid-area: informacion;
-    display: grid;
-    grid-template-areas: 
-    "titulo"
-    "concepto";
-    grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-area: informacion; 
+    height: 100vh;
+    width: 50vw; 
+    display: flex; 
+    align-items: end;
+    justify-content: right;
+}
+.container-izquierda img{
+    height: 100vh;
+}
+           
+.contenido-login{
+    grid-area: login;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.contenido-titulo-izquierda{
-    grid-area: titulo;
-    text-align: center;
-
-}
-.contenido-izquierda-texto{
-    grid-area: concepto;
-    width: 45vw;
-}
-.contenido-login{
-    grid-area: login;
+.container-login-elementos{
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
+    "imagen" 
     "titulo"
     "contenido"
     "botones";
-    height: 40vh;
+    height: 60vh;
     width: 40vw;
     justify-content: center;
     align-items: center;
-    background: rgb(150, 150, 230);
+    background: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 10px;
+    box-shadow: 3px 3px 3px 3px rgb(209, 209, 209);
+}
+.container-login-elementos .imagen-login{
+    grid-area: imagen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 70px;
+    width: 40vw;
+}
+.container-login-elementos div{
+    position: relative;
+    top: 20px;
+}
+.imagen-login img{
+    height: 15vh;
+    width: 7vw;
+    border-radius: 50%; 
+    background: white;
+    box-shadow: 1px 1px 1px 1px rgb(209, 209, 209);
 }
 .login-titulo{
     grid-area: titulo;
@@ -63,12 +84,14 @@
     font-weight: bold;
 }
 .login-contenido input{
-    height: 5.5vh;
+    margin: 10px;
+    width: auto; 
+    height: 4vh;
     width: 30vw;
     padding-left: 10px;
+    border: transparent;
+    border-bottom: 1px solid #5c5c5c;
     font-size: 1.2vw;
-    border-radius: 10px;
-    border: 1px;
 }
 .login-contenido input:focus{
     outline: none;
@@ -83,7 +106,7 @@
     height: 6vh;
     width: 10vw;
     color: white;
-    background: blue;
+    background: rgb(235, 68, 46);
     font-weight: bold;
     font-size: 1vw;
     border: none;
@@ -95,13 +118,14 @@
 .login-botones button:hover{
     color: black;
     background: white;
+    border: 1px solid;
 }
 .login-botones a{
     font-weight: bold;
     color: black;
 }
 .login-botones a:hover{
-    color: blue;
+    color: rgb(71, 71, 71);
 }
 @media only screen and (max-width: 600px) {
     .container-login{
@@ -109,8 +133,14 @@
         grid-template-areas: 
         "login"
         "informacion";
-        width: 100vw;
-        height: 100vh;
+        
+    }
+    .contenido-login{
+        grid-area: login;
+    }
+    .container-izquierda{
+        grid-area: informacion;
+        display: none;
     }
     .contenido-titulo-izquierda{
         text-align: center;
@@ -118,9 +148,17 @@
     .contenido-izquierda-texto{
         width: 90vw;
     }
-    .contenido-login{
+    .container-login-elementos .imagen-login{
+        top: 170px;
+        width: 90vw;
+    }
+    .container-login-elementos{
         height: 50vh;
         width: 90vw;
+    }
+    .imagen-login img{
+        height: 10vh;
+        width: auto;
     }
     .login-titulo{
         font-size: 5vw;
@@ -132,13 +170,65 @@
         height: 5vh;
         width: 80vw;
         font-size: 4vw;
-        
     }
-  
     .login-botones button{
-        height: 4.5vh;
-        width: 35vw;
+        height: 5vh;
+        width: 37vw;
         font-size: 5vw;
      
     }
+    
+}
+@media only screen and (max-width: 400px) {
+    .container-login{
+        display: grid;
+        grid-template-areas: 
+        "login"
+        "informacion";
+        
+    }
+    .contenido-login{
+        grid-area: login;
+    }
+    .container-izquierda{
+        grid-area: informacion;
+        display: none;
+    }
+    .contenido-titulo-izquierda{
+        text-align: center;
+    }
+    .contenido-izquierda-texto{
+        width: 90vw;
+    }
+    .container-login-elementos .imagen-login{
+        top: 115px;
+        width: 90vw;
+    }
+    .container-login-elementos{
+        height: 57vh;
+        width: 90vw;
+    }
+  
+    .imagen-login img{
+        height: 10vh;
+        width: auto;
+    }
+    .login-titulo{
+        font-size: 5vw;
+    }
+    .login-contenido label{
+        width: 80vw;
+    }
+    .login-contenido input{
+        height: 5vh;
+        width: 80vw;
+        font-size: 4vw;
+    }
+    .login-botones button{
+        height: 5vh;
+        width: 37vw;
+        font-size: 5vw;
+     
+    }
+    
 }

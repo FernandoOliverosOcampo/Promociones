@@ -12,28 +12,30 @@
     <section class="section-login">
         <div class="container-login">
             <div class="container-izquierda">
-                <div class="contenido-titulo-izquierda">
-                    <h2>Inicio de sesión</h2>
-                </div>
-                <div class="contenido-izquierda-texto">
-                    <p>Ingresa con tu numero de documento para acceeder a los beneficios de tu cuenta, para ello debes escribir el numero sin separaciones por punto o coma.</p>
-                </div>
+               <img src="../img/admin-ajax.webp" alt="Imagen equiti">
             </div>
             <div class="contenido-login">
-                <div class="login-titulo">
-                    <h2>Inicio de sesión</h2>
+                <div class="container-login-elementos">
+                    <div class="imagen-login">
+                        <img src="../img/equiti.ico" alt="logo equiti">
+                    </div>
+                   <div>
+                    <div class="login-titulo">
+                        <h2>Inicio de sesión</h2>
+                    </div>
+                    <div class="login-contenido">
+                        <label for="">Correo electronico: </label>
+                        <input type="text", placeholder="Correo electronico" id="correo">
+                        <label for="">Contraseña: </label>
+                        <input type="password", placeholder="Contraseña" id="contrasena">
+                    </div>
+                    <div class="login-botones">
+                        <a id="btnIngresar"><button type="submit">Ingresar</button></a>
+                        <a href="form.html">¿No tienes una cuenta?, Registrate aquí.</a>
+                    </div>
                 </div>
-                <div class="login-contenido">
-                    <label for="">Correo electronico: </label>
-                    <input type="text", placeholder="Correo electronico" id="correo">
-                    <label for="">Contraseña: </label>
-                    <input type="password", placeholder="Contraseña" id="contrasena">
                 </div>
-                <div class="login-botones">
-                    <a id="btnIngresar"><button type="submit">Ingresar</button></a>
-                    <a href="form.html">¿No tienes una cuenta?, Registrate aquí.</a>
-                </div>
-            </div>    
+            </div>  
         </div>
 
     </section>
@@ -41,9 +43,5 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" src="../js/vista/vista-login.js"></script>
- 
-
-
-    
 </body>
 </html>

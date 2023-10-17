@@ -15,7 +15,6 @@ const Controlador ={
                 Vista.redirigirAIndex()
               } else {
                 Vista.mostrarMensajeError("Usuario no encontrado")
-               
               }
         } catch (error) {
             Vista.mostrarMensajeError('Error al iniciar sesión');

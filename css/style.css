@@ -11,6 +11,9 @@
     height: 100vh;
     margin-top: 20px;
   }
+.logo{
+    height: 10vh;
+}
 body{
     background-color: rgb(245, 243, 246);
 }
