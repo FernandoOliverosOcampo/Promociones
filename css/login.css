@@ -44,7 +44,7 @@
     background: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 3px 3px 3px 3px rgb(209, 209, 209);
+    box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 }
 .container-login-elementos .imagen-login{
     grid-area: imagen;
@@ -64,7 +64,7 @@
     width: 7vw;
     border-radius: 50%; 
     background: white;
-    box-shadow: 1px 1px 1px 1px rgb(209, 209, 209);
+   box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 }
 .login-titulo{
     grid-area: titulo;
