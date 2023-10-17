@@ -136,6 +136,7 @@
         
     }
     .contenido-login{
+        width: 100vw;
         grid-area: login;
     }
     .container-izquierda{
@@ -189,6 +190,7 @@
     }
     .contenido-login{
         grid-area: login;
+        width: 100vw;
     }
     .container-izquierda{
         grid-area: informacion;
