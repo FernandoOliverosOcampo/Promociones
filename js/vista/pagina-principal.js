@@ -1,11 +1,30 @@
 import Controlador from "../controlador/controlador-pagina-principal.js";
 const Vista = {
   //CONTENIDO DE LA PAGINA
+ 
+
   inicioSesionModal: function () {
+    function mostrarHora() {
+        var fechaHoraActual = new Date();
+        var hora = fechaHoraActual.getHours();
+        var minutos = fechaHoraActual.getMinutes();
+        var segundos = fechaHoraActual.getSeconds();
+      
+        // Asegurarse de que los valores tengan dos dígitos
+        hora = hora < 10 ? "0" + hora : hora;
+        minutos = minutos < 10 ? "0" + minutos : minutos;
+        segundos = segundos < 10 ? "0" + segundos : segundos;
+      
+        var horaCompleta = hora + ":" + minutos + ":" + segundos;
+        document.getElementById("reloj").textContent = horaCompleta;
+      }
+      
+      // Actualizar la hora cada segundo (1000 milisegundos)
+      setInterval(mostrarHora, 1000);
    
     const modalinicio = document.getElementById("modalinicio");
     const inicioContent = modalinicio.querySelector(".modal-contenido-inicio");
-
+    const date  = new Date()
     if(localStorage.getItem("access_token")){
         inicioContent.innerHTML = `
         <div class="modal-cabecera">
@@ -20,6 +39,8 @@ const Vista = {
             <div class="titulo-inicio">
                 <h2>BIENVENIDO</h2>
                 <p>Ahora puedes acceder y disfrutar de los beneficios de tu cuenta.</p>
+                <p>${date.toLocaleDateString()}</p>
+                <p id="reloj"></p>
             </div>
             <div class="inicio-modal">
                 <div class="boton-cerrar-sesion">

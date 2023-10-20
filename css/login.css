@@ -64,7 +64,7 @@
     width: 7vw;
     border-radius: 50%; 
     background: white;
-   box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 .login-titulo{
     grid-area: titulo;
@@ -104,7 +104,7 @@
 }
 .login-botones button{
     height: 6vh;
-    width: 10vw;
+    width: 30vw;
     color: white;
     background: rgb(235, 68, 46);
     font-weight: bold;
@@ -136,8 +136,8 @@
         
     }
     .contenido-login{
-        width: 100vw;
         grid-area: login;
+        width: 100vw;
     }
     .container-izquierda{
         grid-area: informacion;
