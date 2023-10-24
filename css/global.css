@@ -392,6 +392,7 @@ li p:hover{
     /*MODAL INICIO SESION*/
 
 .modal-inicio .modal-contenido-inicio {
+    height: 40vh;
     width: 90vw;
 }
 .modal-inicio .modal-cuerpo .titulo-inicio p{

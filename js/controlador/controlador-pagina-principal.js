@@ -1,6 +1,15 @@
 import Modelo from "../modelo/modelo-pagina-principal.js";
 import Vista from "../vista/pagina-principal.js"
 const Controlador = {
+  async modalInicioSesion(){
+    try {
+      const res = await Modelo.datosMostrarUsuarios();
+      Vista.inicioSesionModal(res.data)
+      Vista.cerrarSesion()
+  } catch (err) {
+      console.error(err)
+  }
+  },
   async mostrarComerciosModal(){
     try {
       const res = await Modelo.datosMostrar();
@@ -210,7 +219,6 @@ const Controlador = {
   //CONTROLADOR CERRAR SESION
   controlarLosModales:function(){
     this.mostrarModal();
-    this.mostrarModalSesion();
     this.mostrarModal2();
     this.mostrarModalMapa()
   }

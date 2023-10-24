@@ -1,32 +1,35 @@
 import Controlador from "../controlador/controlador-pagina-principal.js";
 const Vista = {
   //CONTENIDO DE LA PAGINA
- 
-
+  
   inicioSesionModal: function () {
-    function mostrarHora() {
-        var fechaHoraActual = new Date();
-        var hora = fechaHoraActual.getHours();
-        var minutos = fechaHoraActual.getMinutes();
-        var segundos = fechaHoraActual.getSeconds();
-      
-        // Asegurarse de que los valores tengan dos dígitos
-        hora = hora < 10 ? "0" + hora : hora;
-        minutos = minutos < 10 ? "0" + minutos : minutos;
-        segundos = segundos < 10 ? "0" + segundos : segundos;
-      
-        var horaCompleta = hora + ":" + minutos + ":" + segundos;
-        document.getElementById("reloj").textContent = horaCompleta;
-      }
-      
-      // Actualizar la hora cada segundo (1000 milisegundos)
-      setInterval(mostrarHora, 1000);
-   
     const modalinicio = document.getElementById("modalinicio");
-    const inicioContent = modalinicio.querySelector(".modal-contenido-inicio");
-    const date  = new Date()
-    if(localStorage.getItem("access_token")){
-        inicioContent.innerHTML = `
+        const inicioContent = modalinicio.querySelector(".modal-contenido-inicio");
+        const date = new Date();
+
+        function mostrarHora() {
+            var fechaHoraActual = new Date();
+            var hora = fechaHoraActual.getHours();
+            var minutos = fechaHoraActual.getMinutes();
+            var segundos = fechaHoraActual.getSeconds();
+
+            // Asegurarse de que los valores tengan dos dígitos
+            hora = hora < 10 ? "0" + hora : hora;
+            minutos = minutos < 10 ? "0" + minutos : minutos;
+            segundos = segundos < 10 ? "0" + segundos : segundos;
+
+            var horaCompleta = hora + ":" + minutos + ":" + segundos;
+            document.getElementById("reloj").textContent = horaCompleta;
+        }
+        // Verifica si hay un token JWT almacenado en el localStorage
+        const access_token = localStorage.getItem("access_token");
+        if (access_token) {
+            // Decodifica el token JWT para obtener el nombre del usuario
+            const nombreUsuario = obtenerNombreUsuarioDesdeToken(access_token);
+            // Actualiza la hora cada segundo (1000 milisegundos)
+            setInterval(mostrarHora, 1000);
+ 
+      inicioContent.innerHTML = `
         <div class="modal-cabecera">
             <div class="nombre">
                 <p>Sesión activa</p>
@@ -37,7 +40,7 @@ const Vista = {
         </div>
         <div class="modal-cuerpo">
             <div class="titulo-inicio">
-                <h2>BIENVENIDO</h2>
+                <h2 id='nombre-usuario'>Bienvenido (a) ${nombreUsuario}</h2>
                 <p>Ahora puedes acceder y disfrutar de los beneficios de tu cuenta.</p>
                 <p>${date.toLocaleDateString()}</p>
                 <p id="reloj"></p>
@@ -48,9 +51,9 @@ const Vista = {
             </div>
         </div>    
         `;
-        return inicioContent;
-    }else{
-        inicioContent.innerHTML = `
+      return inicioContent;
+    } else {
+      inicioContent.innerHTML = `
         <div class="modal-cabecera">
         <div class="nombre">
             <p>Inicio de sesión y registro</p>
@@ -80,7 +83,7 @@ const Vista = {
     </div>
     
         `;
-        return inicioContent;
+      return inicioContent;
     }
 
   },
@@ -124,43 +127,41 @@ const Vista = {
       <button id="btnseguros"><i class="fa-solid fa-shield-heart"></i></i> Seguros</button>
 </div>
 </div>
-<div class = "item">
-
     `;
-  slider.append(sliderContent);
+    slider.append(sliderContent);
   },
   destacados: function (data) {
-    for(let i =0; i <12 && data.length; i++){
-        const element = data[i];
-        const contenedor = document.getElementById('multimedia')
-        const logo = element.imagen;
-        const multimedia = document.createElement("div");
-        const multimediaContent = document.createElement("div");
-  
-        multimedia.classList = "multimedia";
-        multimediaContent.classList = ".descatados-multimedia";
-        multimediaContent.innerHTML = `
+    for (let i = 0; i < 12 && data.length; i++) {
+      const element = data[i];
+      const contenedor = document.getElementById("multimedia");
+      const logo = element.imagen;
+      const multimedia = document.createElement("div");
+      const multimediaContent = document.createElement("div");
+
+      multimedia.classList = "multimedia";
+      multimediaContent.classList = ".descatados-multimedia";
+      multimediaContent.innerHTML = `
         <a href="#"><img src="${logo}" alt="imagen multimedia" ></a>
         `;
-        multimedia.append(multimediaContent)
-        contenedor.append(multimedia)
+      multimedia.append(multimediaContent);
+      contenedor.append(multimedia);
     }
   },
   comercios: function (data) {
-    for(let i =0; i < 12 && data.length; i++){
-        const element = data[i];
-        const logo = element.imagen;
-        const lenguaje = element.nombre;
-  
-        const comercio = document.createElement("div");
-        const comercioContent = document.createElement("div");
-  
-        comercio.classList = "comercios-multimedia";
-        comercioContent.classList = "contenedor-comercio-multimedia";
-  
-        const contenedor = document.querySelector('.comercio-multimedia');
-  
-        comercioContent.innerHTML = `
+    for (let i = 0; i < 12 && data.length; i++) {
+      const element = data[i];
+      const logo = element.imagen;
+      const lenguaje = element.nombre;
+
+      const comercio = document.createElement("div");
+      const comercioContent = document.createElement("div");
+
+      comercio.classList = "comercios-multimedia";
+      comercioContent.classList = "contenedor-comercio-multimedia";
+
+      const contenedor = document.querySelector(".comercio-multimedia");
+
+      comercioContent.innerHTML = `
         <div class="comercio-contenido" id="contenido-comercio">
             <div class="comercio-imagenes">
                 <a href=""><img src="${logo}" alt="logo comercio"></a>
@@ -168,10 +169,10 @@ const Vista = {
         <div class="comercio-titulo">
             <p>${lenguaje}</p>
         </div>
-        `;  
-        comercio.append(comercioContent) 
-        contenedor.append(comercio)
-    }   
+        `;
+      comercio.append(comercioContent);
+      contenedor.append(comercio);
+    }
   },
   tickets: function () {
     const ticket = document.getElementById("tickets");
@@ -253,10 +254,10 @@ const Vista = {
     return ticketsContent;
   },
   llenarModal: function (data) {
-        const modal = document.getElementById("modal");
-        const modalContent = modal.querySelector(".modal-contenido");
-    
-        modalContent.innerHTML = `
+    const modal = document.getElementById("modal");
+    const modalContent = modal.querySelector(".modal-contenido");
+
+    modalContent.innerHTML = `
                 <div class="modal-cabecera">
                     <div class="nombre">
                         <p>Destacados</p>
@@ -275,30 +276,28 @@ const Vista = {
                 </div>
             `;
 
-            const imagenesContainer = modalContent.querySelector(`#imagenesModal`);
-            this.agregarImagenesModal(data,imagenesContainer)
+    const imagenesContainer = modalContent.querySelector(`#imagenesModal`);
+    this.agregarImagenesModal(data, imagenesContainer);
 
-        return modalContent;
-
+    return modalContent;
   },
 
-  agregarImagenesModal: function (data,imagenesContainer) {
+  agregarImagenesModal: function (data, imagenesContainer) {
     // Agrega las imágenes al contenedor del slider
-    data.forEach(element => {
-        const logosImagenes = element.imagen;
-        const imagen = document.createElement('img');
-        imagen.src = logosImagenes;
-        imagen.className = "destacados-modal-imagenes";
-        imagenesContainer.appendChild(imagen);
+    data.forEach((element) => {
+      const logosImagenes = element.imagen;
+      const imagen = document.createElement("img");
+      imagen.src = logosImagenes;
+      imagen.className = "destacados-modal-imagenes";
+      imagenesContainer.appendChild(imagen);
     });
   },
 
   llenarModal2: function (data) {
-       
-        const modal2 = document.getElementById("modal2");
-        const modalContent2 = modal2.querySelector(".modal-contenido2");
+    const modal2 = document.getElementById("modal2");
+    const modalContent2 = modal2.querySelector(".modal-contenido2");
 
-        modalContent2.innerHTML = `
+    modalContent2.innerHTML = `
             <div class="modal-cabecera2">
                 <div class="nombre">
                     <p>Comercios</p>
@@ -316,18 +315,18 @@ const Vista = {
             
             </div>
         `;
-        const comerciosContainer = modalContent2.querySelector('#modalComercios')
-        modal2.append(modalContent2);
-        this.agregarComerciosModal(data,comerciosContainer)
-        return modalContent2;
+    const comerciosContainer = modalContent2.querySelector("#modalComercios");
+    modal2.append(modalContent2);
+    this.agregarComerciosModal(data, comerciosContainer);
+    return modalContent2;
   },
-  agregarComerciosModal: function(data, comerciosContainer){
-        data.forEach(element =>{
-            const logo = element.imagen;
-            const lenguaje = element.nombre;
-            const contenedor = document.createElement('div')
-            contenedor.classList='comercios-tarjetas-contenedor'
-            contenedor.innerHTML = `
+  agregarComerciosModal: function (data, comerciosContainer) {
+    data.forEach((element) => {
+      const logo = element.imagen;
+      const lenguaje = element.nombre;
+      const contenedor = document.createElement("div");
+      contenedor.classList = "comercios-tarjetas-contenedor";
+      contenedor.innerHTML = `
                    <div class="contenido-comercios-tarjetas">
                         <div class="imagen-tarjetas">
                             <img src="${logo}" alt="logo comercio">
@@ -338,10 +337,9 @@ const Vista = {
                             </div>
                         </div>
                     </div>      
-            `
-           comerciosContainer.appendChild(contenedor)
-
-        });
+            `;
+      comerciosContainer.appendChild(contenedor);
+    });
   },
   llenarMapa: function () {
     const modalmapa = document.getElementById("modalmapa");
@@ -367,84 +365,91 @@ const Vista = {
    `;
     return mapaContent;
   },
-  cerrarSesion: function(){
-    const cerrarBtn = document.getElementById('cerrarSesion');
-    cerrarBtn.addEventListener('click', ()=>{
-        localStorage.removeItem("access_token")
-        console.log("TOKEN REMOVIDO, SESION CERRADA")
-        location.reload();
-    })
-     
+  cerrarSesion: function () {
+    const cerrarBtn = document.getElementById("cerrarSesion");
+    cerrarBtn.addEventListener("click", () => {
+      localStorage.removeItem("access_token");
+      location.href = ('../pages/login.html')
+    //   location.reload();
+      
+    });
   },
   //MOSTRAR LOS ELEMENTOS DE LA PAGINA
   motrarElmentosPagina: function () {
-    this.inicioSesionModal();
     this.itemServicios();
     this.tickets();
     this.llenarMapa();
   },
-  ticketsBotones(){
-    var button = document.querySelectorAll('.boton')
-    button.forEach(function(boton) {
-        boton.addEventListener('click', function() {
-            if(localStorage.getItem("access_token")){    
-                location.href=('./pages/paginas-beneficios-tickest.html')
-            }
-            else{
-                Swal.fire({
-                    icon: 'info',
-                    title: 'Oops...',
-                    text: 'Primero debes iniciar sesión',
-                });
-                // boton.disabled = true;
-            }
-        });   
+  ticketsBotones() {
+    var button = document.querySelectorAll(".boton");
+    button.forEach(function (boton) {
+      boton.addEventListener("click", function () {
+        if (localStorage.getItem("access_token")) {
+          location.href = "./pages/paginas-beneficios-tickest.html";
+        } else {
+          Swal.fire({
+            icon: "info",
+            title: "Oops...",
+            text: "Primero debes iniciar sesión",
+          });
+          // boton.disabled = true;
+        }
+      });
     });
-   
-  }
+  },
 };
+// Función para decodificar un token JWT
+function obtenerNombreUsuarioDesdeToken(token) {
+  try {
+      const tokenParts = token.split('.');
+      const tokenPayload = tokenParts[1];
+      const tokenPayloadDecoded = atob(tokenPayload);
+      const tokenPayloadData = JSON.parse(tokenPayloadDecoded);
+      const nombreUsuario = tokenPayloadData.nombre; // Asegúrate de que coincida con la clave utilizada en el servidor
+      return nombreUsuario;
+  } catch (error) {
+      console.error(error);
+      return null;
+  }
+}
+
 export default Vista;
 //ELEMENTOS DEL DOM
 document.addEventListener("DOMContentLoaded", function () {
-Vista.motrarElmentosPagina();
-if(localStorage.getItem("access_token")){
-    console.log("TIENES TOKEN DE ACCESO")
+  Vista.motrarElmentosPagina();
+  if (localStorage.getItem("access_token")) {
+    console.log("TIENES TOKEN DE ACCESO");
     const ul = document.getElementById("menuLista");
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    const i = document.createElement('i')
-    li.classList.add('menu__item');
-    a.setAttribute("id", "inicioSesion")
-    i.classList.add('fa-regular', 'fa-user', 'fa-2x')
-    li.appendChild(a)
-    a.appendChild(i)
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    const i = document.createElement("i");
+    li.classList.add("menu__item");
+    a.setAttribute("id", "inicioSesion");
+    i.classList.add("fa-regular", "fa-user", "fa-2x");
+    li.appendChild(a);
+    a.appendChild(i);
     ul.appendChild(li);
-   
-    var button = document.querySelectorAll('.boton')
-    button.forEach(function(boton) {
-        boton.disabled = false;
-    });
-    Vista.cerrarSesion()
-}else{
-    console.log("No tienes access token")
-        const ul = document.getElementById("menuLista");
-        const li = document.createElement('li');
-        const a = document.createElement('a');
-        const i = document.createElement('i')
-        li.classList.add('menu__item');
-        a.setAttribute("id", "inicioSesion")
-        i.classList.add('fa-regular', 'fa-user', 'fa-2x')
-        li.appendChild(a)
-        a.appendChild(i)
-        ul.appendChild(li);
-     
-}    
-  Vista.ticketsBotones()
+    
+  } else {
+    console.log("No tienes access token");
+    const ul = document.getElementById("menuLista");
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    const i = document.createElement("i");
+    li.classList.add("menu__item");
+    a.setAttribute("id", "inicioSesion");
+    i.classList.add("fa-regular", "fa-user", "fa-2x");
+    li.appendChild(a);
+    a.appendChild(i);
+    ul.appendChild(li);
+  }
+  Controlador.mostrarModalSesion()
+  Vista.ticketsBotones();
   Controlador.mostrarContenido();
-  Controlador.mostrarContenidoDestacados()
+  Controlador.mostrarContenidoDestacados();
   Controlador.mostrarContenidoModalDestacados();
   Controlador.mostrarComerciosModal();
   Controlador.mapaCercaDeMi();
-  Controlador.controlarLosModales(); 
+  Controlador.controlarLosModales();
+  Controlador.modalInicioSesion();
 });
-
