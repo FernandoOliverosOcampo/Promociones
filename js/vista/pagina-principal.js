@@ -418,14 +418,18 @@ export default Vista;
 document.addEventListener("DOMContentLoaded", function () {
   Vista.motrarElmentosPagina();
   if (localStorage.getItem("access_token")) {
+    const nombreUsuario = obtenerNombreUsuarioDesdeToken(localStorage.getItem("access_token"));
     console.log("TIENES TOKEN DE ACCESO");
     const ul = document.getElementById("menuLista");
     const li = document.createElement("li");
     const a = document.createElement("a");
     const i = document.createElement("i");
+    const p = document.createElement('p');
+    p.textContent = `${nombreUsuario}`
     li.classList.add("menu__item");
     a.setAttribute("id", "inicioSesion");
     i.classList.add("fa-regular", "fa-user", "fa-2x");
+    i.appendChild(p)
     li.appendChild(a);
     a.appendChild(i);
     ul.appendChild(li);
