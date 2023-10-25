@@ -1,11 +1,21 @@
 import Modelo from "../modelo/modelo-pagina-principal.js";
 import Vista from "../vista/pagina-principal.js"
 const Controlador = {
+  async mostrarTickets(){
+    try {
+      const res = await Modelo.datosMostrar();
+      Vista.tickets(res.data)
+      Vista.ticketsBotones()
+  } catch (err) {
+      console.error(err)
+  }
+
+  },
   async modalInicioSesion(){
     try {
       const res = await Modelo.datosMostrarUsuarios();
       Vista.inicioSesionModal(res.data)
-      Vista.cerrarSesion()
+     
   } catch (err) {
       console.error(err)
   }

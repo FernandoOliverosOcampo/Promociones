@@ -28,8 +28,8 @@ const Vista = {
             const nombreUsuario = obtenerNombreUsuarioDesdeToken(access_token);
             // Actualiza la hora cada segundo (1000 milisegundos)
             setInterval(mostrarHora, 1000);
- 
-      inicioContent.innerHTML = `
+          
+        inicioContent.innerHTML = `
         <div class="modal-cabecera">
             <div class="nombre">
                 <p>Sesión activa</p>
@@ -40,9 +40,9 @@ const Vista = {
         </div>
         <div class="modal-cuerpo">
             <div class="titulo-inicio">
-                <h2 id='nombre-usuario'>Bienvenido (a) ${nombreUsuario}</h2>
+                <h2 id='nombre-usuario'>Bienvenido(a) ${nombreUsuario}</h2>
                 <p>Ahora puedes acceder y disfrutar de los beneficios de tu cuenta.</p>
-                <p>${date.toLocaleDateString()}</p>
+                <p id="fecha">${date.toLocaleDateString()}</p>
                 <p id="reloj"></p>
             </div>
             <div class="inicio-modal">
@@ -51,6 +51,13 @@ const Vista = {
             </div>
         </div>    
         `;
+        const cerrarBtn = document.getElementById("cerrarSesion");
+        cerrarBtn.addEventListener("click", () => {
+          localStorage.removeItem("access_token");
+          location.href = ('../pages/login.html')
+        //   location.reload();
+          
+        });
       return inicioContent;
     } else {
       inicioContent.innerHTML = `
@@ -174,84 +181,40 @@ const Vista = {
       contenedor.append(comercio);
     }
   },
-  tickets: function () {
+  tickets: function (data) {
     const ticket = document.getElementById("tickets");
     const ticketsContent = ticket.querySelector(".contenedor-boletos");
 
     ticketsContent.innerHTML = `
-    <div class="contenido-tickets">
+    <div id="contenedor-boletos">
+       
+    </div>
+    `;
+    const beneficiosContainer = ticketsContent.querySelector('#contenedor-boletos')
+    this.agregarBeneficios(data, beneficiosContainer)
+    return ticketsContent;
+  },
+  agregarBeneficios: function (data, beneficiosContainer) {
+    for (let i = 0; i < 6 && data.length; i++) {
+      const element = data[i];
+      const logo = element.imagen;
+      const lenguaje = element.nombre;
+      const contenedor = document.createElement("div");
+      contenedor.classList = "contenido-tickets";
+      contenedor.innerHTML = `
         <div class="imagen-tickets">
-              <img src="./img/2.webp" alt="logo comercio">
+          <img src="${logo}" alt="logo comercio">
         </div>
         <div class="tickets-contenido">
-            <div class="texto-ticket">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-                <button class="boton" >20%</button>
-            </div>
-        </div>
-    </div>
-    <div class="contenido-tickets">
-    <div class="imagen-tickets">
-          <img src="./img/2.webp" alt="logo comercio">
-    </div>
-    <div class="tickets-contenido">
-        <div class="texto-ticket">
+          <div class="texto-ticket">
+            <h3>${lenguaje}</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-
             <button class="boton" >20%</button>
-        </div>
-    </div>
-</div>
-<div class="contenido-tickets">
-<div class="imagen-tickets">
-      <img src="./img/2.webp" alt="logo comercio">
-</div>
-<div class="tickets-contenido">
-    <div class="texto-ticket">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-
-        <button class="boton" >20%</button>
-    </div>
-</div>
-</div>
-<div class="contenido-tickets">
-<div class="imagen-tickets">
-      <img src="./img/2.webp" alt="logo comercio">
-</div>
-<div class="tickets-contenido">
-    <div class="texto-ticket">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-
-        <button class="boton" >20%</button>
-    </div>
-</div>
-</div>
-<div class="contenido-tickets">
-<div class="imagen-tickets">
-      <img src="./img/2.webp" alt="logo comercio">
-</div>
-<div class="tickets-contenido">
-    <div class="texto-ticket">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-            <button class="boton" >20%</button></a>
-    </div>
-</div>
-</div>
-<div class="contenido-tickets">
-<div class="imagen-tickets">
-      <img src="./img/2.webp" alt="logo comercio">
-</div>
-<div class="tickets-contenido">
-    <div class="texto-ticket">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-
-        <button class="boton" >20%</button>
-    </div>
-</div>
-</div>
-    
-    `;
-    return ticketsContent;
+          </div>
+        </div>   
+            `;
+      beneficiosContainer.appendChild(contenedor);
+    };
   },
   llenarModal: function (data) {
     const modal = document.getElementById("modal");
@@ -334,6 +297,7 @@ const Vista = {
                         <div class="tarjetas-contenido">
                             <div class="texto-tarjeta">
                                 <h3>${lenguaje}</h3> 
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
                             </div>
                         </div>
                     </div>      
@@ -365,21 +329,8 @@ const Vista = {
    `;
     return mapaContent;
   },
-  cerrarSesion: function () {
-    const cerrarBtn = document.getElementById("cerrarSesion");
-    cerrarBtn.addEventListener("click", () => {
-      localStorage.removeItem("access_token");
-      location.href = ('../pages/login.html')
-    //   location.reload();
-      
-    });
-  },
+
   //MOSTRAR LOS ELEMENTOS DE LA PAGINA
-  motrarElmentosPagina: function () {
-    this.itemServicios();
-    this.tickets();
-    this.llenarMapa();
-  },
   ticketsBotones() {
     var button = document.querySelectorAll(".boton");
     button.forEach(function (boton) {
@@ -397,6 +348,10 @@ const Vista = {
       });
     });
   },
+  motrarElmentosPagina: function () {
+    this.itemServicios();
+    this.llenarMapa();
+  },
 };
 // Función para decodificar un token JWT
 function obtenerNombreUsuarioDesdeToken(token) {
@@ -412,7 +367,6 @@ function obtenerNombreUsuarioDesdeToken(token) {
       return null;
   }
 }
-
 export default Vista;
 //ELEMENTOS DEL DOM
 document.addEventListener("DOMContentLoaded", function () {
@@ -426,6 +380,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const i = document.createElement("i");
     const p = document.createElement('p');
     p.textContent = `${nombreUsuario}`
+    p.classList.add("nombre_usuario")
     li.classList.add("menu__item");
     a.setAttribute("id", "inicioSesion");
     i.classList.add("fa-regular", "fa-user", "fa-2x");
@@ -433,7 +388,7 @@ document.addEventListener("DOMContentLoaded", function () {
     li.appendChild(a);
     a.appendChild(i);
     ul.appendChild(li);
-    
+
   } else {
     console.log("No tienes access token");
     const ul = document.getElementById("menuLista");
@@ -441,6 +396,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const a = document.createElement("a");
     const i = document.createElement("i");
     li.classList.add("menu__item");
+    
     a.setAttribute("id", "inicioSesion");
     i.classList.add("fa-regular", "fa-user", "fa-2x");
     li.appendChild(a);
@@ -448,7 +404,6 @@ document.addEventListener("DOMContentLoaded", function () {
     ul.appendChild(li);
   }
   Controlador.mostrarModalSesion()
-  Vista.ticketsBotones();
   Controlador.mostrarContenido();
   Controlador.mostrarContenidoDestacados();
   Controlador.mostrarContenidoModalDestacados();
@@ -456,4 +411,5 @@ document.addEventListener("DOMContentLoaded", function () {
   Controlador.mapaCercaDeMi();
   Controlador.controlarLosModales();
   Controlador.modalInicioSesion();
+  Controlador.mostrarTickets();
 });
