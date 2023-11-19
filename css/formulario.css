@@ -127,8 +127,9 @@ button:hover{
     
     button{
     height: 5vh;
-    width: 35vw;
+    width: 41vw;
     font-size: 4vw;
+    margin: 5px;
     
     }
     
@@ -160,7 +161,7 @@ button:hover{
        
     }
     .container-formulario{
-        width: 90vw;
+        width: 100vw;
 
     }
     .contenido-formulario{
@@ -175,15 +176,14 @@ button:hover{
         font-size: 5vw;
     }
     .contenido-formulario input{
-       width: 80vw;
+       width: 90vw;
         font-size: 5vw;
     }
     .contenido-formulario input:focus{
         outline: none;
     }
     .contenido-formulario select{
-
-        width: 80vw;
+        width: 90vw;
         font-size: 5vw;
     }
    

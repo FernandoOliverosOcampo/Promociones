@@ -1,42 +1,40 @@
 import Controlador from "../controlador/controlador-pagina-principal.js";
 const Vista = {
   //CONTENIDO DE LA PAGINA
-  
+
   inicioSesionModal: function () {
     const modalinicio = document.getElementById("modalinicio");
-        const inicioContent = modalinicio.querySelector(".modal-contenido-inicio");
-        const date = new Date();
+    const inicioContent = modalinicio.querySelector(".modal-contenido-inicio");
+    var date = new Date();
 
-        function mostrarHora() {
-            var fechaHoraActual = new Date();
-            var hora = fechaHoraActual.getHours();
-            var minutos = fechaHoraActual.getMinutes();
-            var segundos = fechaHoraActual.getSeconds();
+    function mostrarHora() {
+      var fechaHoraActual = new Date();
+      var hora = fechaHoraActual.getHours();
+      var minutos = fechaHoraActual.getMinutes();
+      var segundos = fechaHoraActual.getSeconds();
 
-            // Asegurarse de que los valores tengan dos dígitos
-            hora = hora < 10 ? "0" + hora : hora;
-            minutos = minutos < 10 ? "0" + minutos : minutos;
-            segundos = segundos < 10 ? "0" + segundos : segundos;
+      // Asegurarse de que los valores tengan dos dígitos
+      hora = hora < 10 ? "0" + hora : hora;
+      minutos = minutos < 10 ? "0" + minutos : minutos;
+      segundos = segundos < 10 ? "0" + segundos : segundos;
 
-            var horaCompleta = hora + ":" + minutos + ":" + segundos;
-            document.getElementById("reloj").textContent = horaCompleta;
-        }
-        // Verifica si hay un token JWT almacenado en el localStorage
-        const access_token = localStorage.getItem("access_token");
-        if (access_token) {
-            // Decodifica el token JWT para obtener el nombre del usuario
-            const nombreUsuario = obtenerNombreUsuarioDesdeToken(access_token);
-            // Actualiza la hora cada segundo (1000 milisegundos)
-            setInterval(mostrarHora, 1000);
-          
-        inicioContent.innerHTML = `
+      var horaCompleta = hora + ":" + minutos + ":" + segundos;
+      document.getElementById("reloj").textContent = horaCompleta;
+    }
+    // Verifica si hay un token JWT almacenado en el localStorage
+    const access_token = localStorage.getItem("access_token");
+    if (access_token) {
+      // Decodifica el token JWT para obtener el nombre del usuario
+      const nombreUsuario = obtenerNombreUsuarioDesdeToken(access_token);
+      // Actualiza la hora cada segundo (1000 milisegundos)
+      setInterval(mostrarHora, 1000);
+
+      inicioContent.innerHTML = `
+        <div class="triangulo">
+      
+        </div
         <div class="modal-cabecera">
-            <div class="nombre">
-                <p>Sesión activa</p>
-            </div
-            <div class="cerrar">
-                 <span class="btn-cerrar-modal cerrar-modal-informacion" id="cerrarModal">&times;</span>
-            </div
+    
         </div>
         <div class="modal-cuerpo">
             <div class="titulo-inicio">
@@ -47,29 +45,25 @@ const Vista = {
             </div>
             <div class="inicio-modal">
                 <div class="boton-cerrar-sesion">
-                    <a href="#"><button id="cerrarSesion">Cerrar sesión</button></a>
+                    <a href="#"><button id="cerrarSesion">Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
             </div>
         </div>    
         `;
-        const cerrarBtn = document.getElementById("cerrarSesion");
-        cerrarBtn.addEventListener("click", () => {
-          localStorage.removeItem("access_token");
-          location.href = ('../pages/login.html')
+      const cerrarBtn = document.getElementById("cerrarSesion");
+      cerrarBtn.addEventListener("click", () => {
+        localStorage.removeItem("access_token");
+        location.href = "../pages/login.html";
         //   location.reload();
-          
-        });
+      });
       return inicioContent;
     } else {
       inicioContent.innerHTML = `
-        <div class="modal-cabecera">
-        <div class="nombre">
-            <p>Inicio de sesión y registro</p>
-        </div
+        <div class="triangulo">
       
-        <div class="cerrar">
-            <span class="btn-cerrar-modal cerrar-modal-informacion" id="cerrarModal">&times;</span>
         </div
-    </div>
+        <div class="modal-cabecera">
+     
+       </div>
     
     <div class="modal-cuerpo">
     <div class="titulo-inicio">
@@ -84,15 +78,10 @@ const Vista = {
     <a href="./pages/form.html"><button>Registrarte</button></a>
     </div>
     </div>
-        
-    <div class="modal-pie2">
-    
-    </div>
-    
+  
         `;
       return inicioContent;
     }
-
   },
   itemServicios: function () {
     const slider = document.getElementById("slider");
@@ -142,13 +131,14 @@ const Vista = {
       const element = data[i];
       const contenedor = document.getElementById("multimedia");
       const logo = element.imagen;
+      const nombre = element.nombre
       const multimedia = document.createElement("div");
       const multimediaContent = document.createElement("div");
-
+      localStorage.setItem('comercio', nombre)
       multimedia.classList = "multimedia";
       multimediaContent.classList = ".descatados-multimedia";
       multimediaContent.innerHTML = `
-        <a href="#"><img src="${logo}" alt="imagen multimedia" ></a>
+        <a href="./pages/paginas-beneficios-tickest.html"><img src="${logo}" alt="${nombre}" ></a>
         `;
       multimedia.append(multimediaContent);
       contenedor.append(multimedia);
@@ -171,7 +161,7 @@ const Vista = {
       comercioContent.innerHTML = `
         <div class="comercio-contenido" id="contenido-comercio">
             <div class="comercio-imagenes">
-                <a href=""><img src="${logo}" alt="logo comercio"></a>
+                <a href=""><img src="${logo}" alt="${lenguaje}"></a>
             </div>
         <div class="comercio-titulo">
             <p>${lenguaje}</p>
@@ -190,8 +180,10 @@ const Vista = {
        
     </div>
     `;
-    const beneficiosContainer = ticketsContent.querySelector('#contenedor-boletos')
-    this.agregarBeneficios(data, beneficiosContainer)
+    const beneficiosContainer = ticketsContent.querySelector(
+      "#contenedor-boletos"
+    );
+    this.agregarBeneficios(data, beneficiosContainer);
     return ticketsContent;
   },
   agregarBeneficios: function (data, beneficiosContainer) {
@@ -207,14 +199,34 @@ const Vista = {
         </div>
         <div class="tickets-contenido">
           <div class="texto-ticket">
-            <h3>${lenguaje}</h3>
+            <h3 class="nombreComercio">${lenguaje}</h3>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit sequi unde beatae animi nostrum atque.</p>
-            <button class="boton" >20%</button>
+            <button class="boton">20%</button>
           </div>
-        </div>   
-            `;
+        </div>`;
+        
       beneficiosContainer.appendChild(contenedor);
-    };
+    }
+  
+    // Agrega el evento clic a cada botón
+    const botones = document.querySelectorAll(".boton");
+    botones.forEach(function(boton){
+      boton.onclick = function() {
+        if (localStorage.getItem("access_token")) {
+          
+           
+          location.href ="./pages/paginas-beneficios-tickest.html"
+          console.log(nombre);
+          // Realiza otras acciones con el nombre obtenido
+        } else {
+          Swal.fire({
+            icon: "info",
+            title: "Oops...",
+            text: "Primero debes iniciar sesión",
+          });
+        }
+      }
+    });
   },
   llenarModal: function (data) {
     const modal = document.getElementById("modal");
@@ -329,26 +341,19 @@ const Vista = {
    `;
     return mapaContent;
   },
-
   //MOSTRAR LOS ELEMENTOS DE LA PAGINA
   ticketsBotones() {
-    var button = document.querySelectorAll(".boton");
-    button.forEach(function (boton) {
-      boton.addEventListener("click", function () {
-        if (localStorage.getItem("access_token")) {
-          location.href = "./pages/paginas-beneficios-tickest.html";
-        } else {
-          Swal.fire({
-            icon: "info",
-            title: "Oops...",
-            text: "Primero debes iniciar sesión",
-          });
-          // boton.disabled = true;
-        }
-      });
-    });
+    // var button = document.querySelectorAll(".boton");
+    // button.forEach(function (boton) {});
+
   },
   motrarElmentosPagina: function () {
+    const date = new Date();
+    const año = date.getFullYear();
+    const footer = document.getElementById("contenido-footer");
+    const contenidoFooter = document.createElement("span");
+    contenidoFooter.innerHTML = `<p id="texto_fecha"> &copy Grupo Equiti - ${año}</p>`;
+    footer.appendChild(contenidoFooter);
     this.itemServicios();
     this.llenarMapa();
   },
@@ -356,39 +361,43 @@ const Vista = {
 // Función para decodificar un token JWT
 function obtenerNombreUsuarioDesdeToken(token) {
   try {
-      const tokenParts = token.split('.');
-      const tokenPayload = tokenParts[1];
-      const tokenPayloadDecoded = atob(tokenPayload);
-      const tokenPayloadData = JSON.parse(tokenPayloadDecoded);
-      const nombreUsuario = tokenPayloadData.nombre; // Asegúrate de que coincida con la clave utilizada en el servidor
-      return nombreUsuario;
+    const tokenParts = token.split(".");
+    const tokenPayload = tokenParts[1];
+    const tokenPayloadDecoded = atob(tokenPayload);
+    const tokenPayloadData = JSON.parse(tokenPayloadDecoded);
+    const nombreUsuario = tokenPayloadData.nombre; // Asegúrate de que coincida con la clave utilizada en el servidor
+    return nombreUsuario;
   } catch (error) {
-      console.error(error);
-      return null;
+    console.error(error);
+    return null;
   }
 }
 export default Vista;
 //ELEMENTOS DEL DOM
 document.addEventListener("DOMContentLoaded", function () {
   Vista.motrarElmentosPagina();
+  if (localStorage.getItem("comercio")){
+    localStorage.removeItem("comercio")
+  }
   if (localStorage.getItem("access_token")) {
-    const nombreUsuario = obtenerNombreUsuarioDesdeToken(localStorage.getItem("access_token"));
+    const nombreUsuario = obtenerNombreUsuarioDesdeToken(
+      localStorage.getItem("access_token")
+    );
     console.log("TIENES TOKEN DE ACCESO");
     const ul = document.getElementById("menuLista");
     const li = document.createElement("li");
     const a = document.createElement("a");
     const i = document.createElement("i");
-    const p = document.createElement('p');
-    p.textContent = `${nombreUsuario}`
-    p.classList.add("nombre_usuario")
+    const p = document.createElement("p");
+    p.textContent = `${nombreUsuario}`;
+    p.classList.add("nombre_usuario");
     li.classList.add("menu__item");
     a.setAttribute("id", "inicioSesion");
     i.classList.add("fa-regular", "fa-user", "fa-2x");
-    i.appendChild(p)
+    i.appendChild(p);
     li.appendChild(a);
     a.appendChild(i);
     ul.appendChild(li);
-
   } else {
     console.log("No tienes access token");
     const ul = document.getElementById("menuLista");
@@ -396,14 +405,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const a = document.createElement("a");
     const i = document.createElement("i");
     li.classList.add("menu__item");
-    
+
     a.setAttribute("id", "inicioSesion");
     i.classList.add("fa-regular", "fa-user", "fa-2x");
     li.appendChild(a);
     a.appendChild(i);
     ul.appendChild(li);
   }
-  Controlador.mostrarModalSesion()
+  Controlador.mostrarModalSesion();
   Controlador.mostrarContenido();
   Controlador.mostrarContenidoDestacados();
   Controlador.mostrarContenidoModalDestacados();

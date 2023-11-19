@@ -5,7 +5,7 @@ const Controlador = {
     try {
       const res = await Modelo.datosMostrar();
       Vista.tickets(res.data)
-      Vista.ticketsBotones()
+      //Vista.ticketsBotones()
   } catch (err) {
       console.error(err)
   }

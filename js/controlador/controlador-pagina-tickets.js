@@ -1,5 +1,12 @@
+import Modelo from "../modelo/modelo-informacion-ticket.js";
+import Vista from '../vista/tickets-pagina-redimir.js'
 const Controlador ={
-        //FUNCIONES DE LOS MODALES
+  //FUNCIONES DE LOS MODALES
+  async informacionTickets(){
+      const comercio = localStorage.getItem('comercio')
+      const res = await Modelo.mostrarInfo(comercio)
+      Vista.mostrarContenido(res)
+  },
   abrirModal: function () {
     modal.style.display = "block";
     window.onclick = function (event) {
@@ -8,7 +15,6 @@ const Controlador ={
       }
     };
   },
-
   cerrarModal: function () {
     const botonCerrarModal = modal.querySelector("#cerrarModal");
     botonCerrarModal.addEventListener("click", () => {
