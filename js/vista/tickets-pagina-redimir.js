@@ -4,6 +4,8 @@ const Vista ={
         const datos = res.data[0]
         const nombre = datos['nombre']
         const imagen = datos['imagen']
+        const modo = datos['modo']
+        const modoServicio = this.agregarBoton(modo)
         const contain = document.getElementById('contenidoBanner');
         const imagenContain = contain.querySelector('.contenido-banner')
         imagenContain.innerHTML = `
@@ -34,7 +36,7 @@ const Vista ={
             <a href="#"><img src="${imagen}" alt="imagen multimedia" ></a>
         </div>
         <div class="boton-redimir">
-            <button id="btnCodigo"><i class="fa-solid fa-ticket"></i>  Mostrar códigos beneficios</button>
+            ${modoServicio}
         </div>
         <div id="modal" class="modal">
             <div class="modal-contenido">
@@ -86,6 +88,14 @@ const Vista ={
             `;
         return modalContent;
       },
+      agregarBoton: function(modo){
+
+        if (modo == 'sede'){
+            return `<button id="btnCodigo"><i class="fa-solid fa-ticket"></i>  Mostrar códigos beneficios</button>`
+        }else{
+            return `<a href="#"><button class="whatsapp"><i class="fa-brands fa-whatsapp"></i>  Contacta a WhatsApp</button></a>`
+        }
+    }
 }
 document.addEventListener('DOMContentLoaded', function(){
     Controlador.informacionTickets()

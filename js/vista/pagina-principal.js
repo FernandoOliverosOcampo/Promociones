@@ -214,7 +214,8 @@ const Vista = {
       boton.onclick = function() {
         if (localStorage.getItem("access_token")) {
           
-           
+          const nombre = boton.closest(".contenido-tickets").querySelector(".nombreComercio").textContent;
+          localStorage.setItem("comercio", nombre);
           location.href ="./pages/paginas-beneficios-tickest.html"
           console.log(nombre);
           // Realiza otras acciones con el nombre obtenido
