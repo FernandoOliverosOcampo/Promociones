@@ -32,21 +32,31 @@ const Vista = {
       inicioContent.innerHTML = `
         <div class="triangulo">
       
-        </div
-        <div class="modal-cabecera">
-    
         </div>
+
+        <div class="modal-cabecera">
+          <div class = "foto-usuario">
+            <img src="../../img/undraw_male_avatar_g98d.svg" class = "img-usuario" alt="">
+          </div>
+          <div class = "nombre-usuario">
+            <p id = "nombre-usuario">${nombreUsuario} </p>
+          </div>
+          <div class = "rol-usuario">
+            <p id = "rol-usuario">Usuario</p>
+          </div>
+          <div class = "config-usuario">
+            <a id = "configUsuario"><i class="fa-solid fa-gear"></i></a>
+          </div>
+        </div>
+
         <div class="modal-cuerpo">
-            <div class="titulo-inicio">
-                <h2 id='nombre-usuario'>Bienvenido(a) ${nombreUsuario}</h2>
-                <p>Ahora puedes acceder y disfrutar de los beneficios de tu cuenta.</p>
-                <p id="fecha">${date.toLocaleDateString()}</p>
-                <p id="reloj"></p>
-            </div>
-            <div class="inicio-modal">
-                <div class="boton-cerrar-sesion">
-                    <a href="#"><button id="cerrarSesion">Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
-            </div>
+          <h2>Soy un h2</h2>
+        </div>    
+
+        <div class="modal-footer">
+          <div class = "boton-cerrar-sesion">
+            <a href="#"><button id="cerrarSesion">Cerrar sesión <i class="fa-solid fa-arrow-right-from-bracket"></i></button></a>
+          </div>
         </div>    
         `;
       const cerrarBtn = document.getElementById("cerrarSesion");
@@ -62,27 +72,39 @@ const Vista = {
       
         </div
         <div class="modal-cabecera">
-     
-       </div>
-    
-    <div class="modal-cuerpo">
-    <div class="titulo-inicio">
-        <h2>Inicio de sesión</h2>
-        <p>Registrate e inicia sesión para acceder a los beneficios de tu cuenta.</p>
-    </div>
-    <div class="inicio-modal">
-    <div class="boton-inicio-sesion">
-    <a href="./pages/login.html"><button>Iniciar sesión</button></a>
-    </div>
-    <div class="boton-registrarte">
-    <a href="./pages/form.html"><button>Registrarte</button></a>
-    </div>
-    </div>
+          <div class = "foto-usuario">
+            <img src="../../img/undraw_male_avatar_g98d.svg" alt="">
+          </div>
+          <div class = "nombre-usuario">
+            <p id = "nombre-usuario"></p>
+          </div>
+          <div class = "rol-usuario">
+            <p id = "rol-usuario"></p>
+          </div>
+          <div class = "config-usuario">
+            <button id = "configUsuario"></button>
+          </div>
+        </div>
+
+        <div class="modal-cuerpo">
+          <h2>Soy un h2</h2>
+        </div>    
+
+        <div class="modal-footer">
+          <div class="boton-inicio-sesion">
+            <a href="./pages/login.html"><button>Iniciar sesión</button></a>
+          </div>
+
+          <div class="boton-registrarte">
+            <a href="./pages/form.html"><button>Registrarte</button></a>
+          </div>
+        </div>
   
         `;
       return inicioContent;
     }
   },
+
   itemServicios: function () {
     const slider = document.getElementById("slider");
     const sliderContent = slider.querySelector(".contenido-slider");

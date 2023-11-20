@@ -437,23 +437,12 @@ a{
        
    }
    /*BOTONES INICIO DE SESION*/
-   .boton-cerrar-sesion button{
-    width: 30vw;
+   .boton-inicio-sesion button, .boton-cerrar-sesion button, .boton-registrarte button{
+    width: 10vw;
     color: white;
     font-weight: bold;
    }
-   .boton-inicio-sesion  button{
-    width: 30vw;
-    color: white;
-    font-weight: bold;
-  
-   }
-   .boton-registrarte button{
-    width: 30vw;
-    color: white;
-    font-weight: bold;
 
-   }
    .contenido-footer{
     display: flex;
     height: 10vh;
@@ -659,14 +648,6 @@ a{
         text-align: start;
        
    }
-   /*BOTONES INICIO DE SESION*/
-   .boton-cerrar-sesion button{
-    width: 80vw;
-   }
-   .boton-inicio-sesion  button{
-    width: 80vw;
-   }
-   .boton-registrarte button{
-    width: 80vw;
-   }   
+
+
 }   

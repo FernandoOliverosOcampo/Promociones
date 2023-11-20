@@ -8,6 +8,7 @@
     font-family: -apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,open sans,helvetica neue,sans-serif;
     line-height: 1.6;
 }
+
 button{
     height: 6vh;
     width: 7vw;
@@ -17,6 +18,7 @@ button{
     cursor: pointer;
     margin: 10px 0;
 }
+
 button:hover{
     color: black;
     background: rgb(245, 78, 56);;
@@ -305,52 +307,63 @@ li p:hover{
 
 .modal-inicio .modal-contenido-inicio {
     display: grid;
-    height: 50vh;
-    width: 30vw;
+    height: 40vh;
+    width: 20vw;
     background-color: #fefefe;
-    transform: translate(207%, 20%);
+    transform: translate(335%, 20%);
     padding: 1vw;
     border-radius: 15px; 
     grid-template-areas:
         "cabecera"
-        "cuerpo";
-    grid-template-rows: 5vh auto;
+        "cuerpo"
+        "footer";
 }
 
-.modal-inicio .modal-cabecera {
-    grid-area: cabecera;
+.modal-inicio .modal-contenido-inicio .modal-cabecera{
     display: grid;
+    grid-area: cabecera;
     grid-template-areas: 
-    "nombre cerrar";
+    "foto nombre configurar"
+    "rol nombre configurar";
+    grid-template-rows: 0.4fr 0.5fr;
     justify-content: space-between;
-}
-.modal-inicio .modal-cabecera .nombre{
-    grid-area: nombre;
-    padding: 1vw 0;
-    color: gray;
-}
-.modal-inicio .modal-cabecera .cerrar{
-    grid-area: cerrar;
-    padding: 0 1vw;
-   
+
 }
 
-.modal-inicio .modal-cuerpo {
+.modal-inicio .modal-contenido-inicio .modal-cabecera .foto-usuario img{
+    height: 10vh;
+    width: auto;
+}
+
+.modal-inicio .modal-contenido-inicio .modal-cuerpo{
     grid-area: cuerpo;
-    overflow: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
 }
-.modal-inicio .modal-cuerpo .titulo-inicio h2{
+
+.modal-inicio .modal-contenido-inicio .modal-footer{
+    grid-area: footer;
+    display: grid;
+    align-items: end;
+    justify-items: end;
+}
+
+.modal-inicio .modal-contenido-inicio .modal-cabecera .foto-usuario{
+    grid-area: foto;
+}
+
+.modal-inicio .modal-contenido-inicio .modal-cabecera .nombre-usuario{
+    grid-area: nombre;
+}
+
+.modal-inicio .modal-contenido-inicio .modal-cabecera .rol-usuario{
     text-align: center;
+    grid-area: rol;
 }
-.modal-inicio .modal-cuerpo .titulo-inicio p{
-    text-align: justify;
-    width: 30vw;
+
+.modal-inicio .modal-contenido-inicio .modal-cabecera .config-usuario{
+    grid-area: configurar;
 }
+
+
 
 
 /*RESPONSIVE*/
